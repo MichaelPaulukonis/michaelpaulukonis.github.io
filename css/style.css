@@ -2,22 +2,26 @@ body {font-family: Source Sans Pro; text-align: center; line-height: 1.2em; colo
 a {color: #96EBE1; text-decoration: none; }
 
 h1 {
-font-weight: 900;
-font-size: 50px;
-font-family: Playfair Display;
-padding: 0 20px 20px 20px;
-line-height: 1.2em;
-margin-top: 0;
-border-bottom: 2px solid #333;
-display: inline-block;
-margin-bottom: 0px;}
+    font-weight: 900;
+    font-size: 50px;
+    font-family: Playfair Display;
+    padding: 0 20px 20px 20px;
+    line-height: 1.2em;
+    margin-top: 0;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+    margin-bottom: 0px;}
 
 p {font-size: 23px; line-height: 1.3em;}
 
 #instagram {margin: 0 auto; border-radius: 999px; margin-top: 30px; margin-bottom: 30px; background: #F7F7F7; height: 150px; width: 150px;}
 .one-gram img {border-radius: 999px;}
 #instagram .load {position: relative; top: 43%;}
-.container {width: 500px; margin: 0 auto; overflow: auto;}
+.container {
+    width: 500px;
+    margin: 0 auto;
+    /* overflow: auto; */
+}
 .quote {font-weight: 900; font-size: 18px;}
 #tweet p {font-weight: 200; font-size: 18px;}
 #tweet p a {color: #777; font-weight: 200; text-decoration: underline;}
@@ -32,30 +36,30 @@ p {font-size: 23px; line-height: 1.3em;}
 .inline-list li a:hover {background: #96EBE1; color: #fff;}
 
 /*!
-Animate.css - http://daneden.me/animate
-Licensed under the MIT license
-*/
+  Animate.css - http://daneden.me/animate
+  Licensed under the MIT license
+  */
 
 .animated {-webkit-animation: 1s infinite; animation: 1s infinite; -webkit-animation-fill-mode: both; animation-fill-mode: both;}
 
 @-webkit-keyframes flash {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
+    0%, 50%, 100% {
+        opacity: 1;
+    }
 
-  25%, 75% {
-    opacity: 0;
-  }
+    25%, 75% {
+        opacity: 0;
+    }
 }
 
 @keyframes flash {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
+    0%, 50%, 100% {
+        opacity: 1;
+    }
 
-  25%, 75% {
-    opacity: 0;
-  }
+    25%, 75% {
+        opacity: 0;
+    }
 }
 
 .flash {-webkit-animation-name: flash; animation-name: flash;}
