@@ -1,9 +1,9 @@
-function buildInsta(data) {
-  var instagram = Sheetsee.ich.instagram({
-    "rows": getLast(data, 1)
-  }, {})
-  document.getElementById('instagram').innerHTML = instagram
-}
+// function buildInsta(data) {
+//   var instagram = Sheetsee.ich.instagram({
+//     "rows": getLast(data, 1)
+//   }, {})
+//   document.getElementById('instagram').innerHTML = instagram
+// }
 
 function buildTweet(data) {
   var one = data.reverse()[0]

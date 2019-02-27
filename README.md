@@ -1,7 +1,7 @@
 # Notes
  - publish to main branch, now. GH will auto-publish to github.io (delayed)
  - original instagram code no longer works - API changes ?
- - replaced with a weird auto-scrolling widget. Eh. whatever.
+ - replaced with a weird auto-scrolling widget. Eh. whatever. from Snapwidget
 
 # Person Page
 
