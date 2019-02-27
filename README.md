@@ -1,3 +1,8 @@
+# Notes
+ - publish to main branch, now. GH will auto-publish to github.io (delayed)
+ - original instagram code no longer works - API changes ?
+ - replaced with a weird auto-scrolling widget. Eh. whatever.
+
 # Person Page
 
 <img src="https://raw.githubusercontent.com/jlord/forkngo/gh-pages/badges/bootstrap_a_color_purple.png" width="200">
