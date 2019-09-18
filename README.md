@@ -1,59 +1,98 @@
-# Notes
- - publish to main branch, now. GH will auto-publish to github.io (delayed)
- - original instagram code no longer works - API changes ?
- - replaced with a weird auto-scrolling widget. Eh. whatever. from Snapwidget
+<p align="center">
+  <a href="https://nuxtjs.org/">
+  <img src="https://avatars2.githubusercontent.com/u/23360933?s=200&v=4" height="60">
+  </a>
+  +
+  <img src="https://geekytheory.com/wp-content/uploads/2014/03/markdown_inte-1024x630.png" height="60">
+</p>
+<h1 align="center">
+  Nuxt + Markdown blog starter
+</h1>
+<p align="center">
+  This is not an official project. It's made by <a href="https://marinaaisa.com/">Marina Aísa</a> and you can contribute submitting a pull-request.
+  </a>
+</p>
 
-# Person Page
+## ⚡️ Live
+[Check it live](https://nuxt-markdown-blog-starter.netlify.com/)
 
-<img src="https://raw.githubusercontent.com/jlord/forkngo/gh-pages/badges/bootstrap_a_color_purple.png" width="200">
+## ✨ Quick start
 
-![screenshot](screenshot.png)
+1.  **Clone this repository.**
 
-A simple personal site with your Twitter and Instagram, from a spreadsheets using [IFTTT](http://www.ifttt.com).
+    ```sh
+    git clone https://github.com/marinaaisa/nuxt-markdown-blog-starter.git
+    ```
 
-This is a [Fork-n-Go](http://www.jlord.github.io/forkngo) project, so fork to get started making your own.
+2.  **Start developing.**
 
-See the demo at [jlord.github.io/person-page](http://jlord.github.io/person-page).
+    Navigate into your new site’s directory and start it up.
 
-## Create your own
+    ```sh
+    cd nuxt-markdown-blog-starter/
+    npm install
+    npm run dev
+    ```
 
-| You'll Need: |   |
-| ------------ | - |
-| [GitHub](http://www.github.com/signup) account | Basic [HTML](http://learn.shayhowe.com/html-css/) |
+3.  **Running!**
 
-### First, fork this repository.
+    Your site is now running at `http://localhost:3000`!
 
-Click the fork button in the upper right. Now you have a copy of this repository on your GitHub account!
+## 🧐 What's inside?
 
-### Rename your fork
+    .
+    ├── node_modules
+    ├── assets
+    ├── components
+    ├── contents
+      ├── en
+        ├── blog
+        ├── blogsEn.js
+      ├── es
+        ├── blog
+        ├── blogsEs.js
+    ├── layouts
+    ├── locales
+    ├── pages
+    ├── plugins
+    ├── static
+    ├── .gitignore
+    ├── LICENSE
+    ├── nuxt.config.js
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
 
-Once you've forked it, click on Settings and rename your fork, because probably `person-page` is not what you want in your URL. Name your new repository: `username.github.io` (but make `username` your username, for instance, I'd use `jlord.github.io`). GitHub will host all website files on the `master` branch of a repo with that account name convention. Woo! More info on that at [pages.github.com](http://www.pages.github.com).
+1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
-You can also give it any 'ol name and GitHub will host it using this patter: `username.github.io/reponame`.
+2.  **`/assets`**: You will find the images and assets for the project. You can find more information at [Nuxt's assets directory documentation](https://nuxtjs.org/guide/assets/)
 
-### Set up Twitter and Instagram with IFTTT
+3.  **`/components`**: Vue components for the project. You can find more information at [Nuxt's components directory documentation](https://nuxtjs.org/guide/directory-structure#the-components-directory)
 
-1. Go to [ifttt.com](https://www.ifttt.com) and create an account, use these recipes for creating a row on a spreadsheet every time you Instagram or Tweet.
- - Twitter [recipe](https://ifttt.com/recipes/178972-all-your-tweets-in-a-google-spreadsheet)
- - Instagram [recipe](https://ifttt.com/recipes/178973-copy-any-instagram-picture-i-take-to-google-drive)
-2. Instagram or Tweet so that a spreadsheet is created. _It may take 10-15 mins for it to appear._
-3. Go to those spreadsheets and add a header row.
- - For the Twitter one: **date, twitter, tweet, tweetURL**
- - For the Instagram one: **instadate, instacaption, instaurl, instasource**
-4. Make each spreadsheet's data accessible:
- - File -> Publish to the Web -> Start Publishing
- - Share -> Anyone with link can view
-5. Get each spreadsheet's URL, it's at the top of your browser!
-6. In `index.hmtl` replace the URL's (`URL` and `URL2`) with the appropriate spreadsheet URL (or spreadsheet key, but make sure you get the entire key, including hyphens and underscores if you're using just the key.) You can edit `index.html` GitHub.com and the Edit button when you click on the filename from your fork's page, or in your favorite text editor.
-7. Go through `index.html` and change links and names to your links and names!
-7. Commit those changes and push them to GitHub (button at the bottom of the GitHub.com page your editing on, or through terminal or GitHub Desktop if you're using one of those).
-8. BOOM! Go checkout your site at `username.github.io`
+4.  **`/contents`**: You will save your MD files here. They are divided by language and you will have to write the URL name of each of them at `blogsEn.js` and `blogsEs.js`.
 
+5.  **`/layouts`**: You can find information at [Nuxt's layout directory documentation](https://nuxtjs.org/guide/directory-structure#the-layouts-directory)
 
-### Style
+6.  **`/locales`**: You will save your translations here.
 
-There are basic styles included in `style.css` but go wild and make it your own, try other things!
+7.  **`/pages`**: You can find information at [Nuxt's pages directory documentation](https://nuxtjs.org/guide/directory-structure#the-pages-directory)
 
-### Bonus Style
+8.  **`/plugins`**: You can find information at [Nuxt's plugins directory documentation](https://nuxtjs.org/guide/directory-structure#the-plugins-directory)
 
-There is another style, on the `lines` branch. To access this style however you'll need to use your Terminal or GitHub desktop app to delete `gh-pages` and then rename `lines` to `gh-pages`.
+9.  **`/statics`**: You can find information at [Nuxt's statics directory documentation](https://nuxtjs.org/guide/directory-structure#the-static-directory)
+
+10. **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+
+11. **`LICENSE`**: This is licensed under the MIT license.
+
+12. **`nuxt-config.js`**: This is the main configuration file for a Nuxt site. This is where you can specify information about your site (metadata) like the site title and description, which Nuxt plugins you’d like to include, etc. (Check out the [config docs](https://nuxtjs.org/guide/configuration) for more detail).
+
+13. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+
+14. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+
+15. **`README.md`**: A text file containing useful reference information about your project.
+
+## 💫 Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/marinaaisa/nuxt-markdown-blog-starter)
