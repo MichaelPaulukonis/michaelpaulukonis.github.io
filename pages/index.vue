@@ -1,38 +1,41 @@
-<template>
-  <div class="page-index">
-    <div class="container">
+<template lang="pug">
+.page-index
+  .container
+    .bio
+      h1 Michael Paulukonis
+      p I am a developer/architect and digital artist living in Framingham, MA
+      ul.inline-list
+        li
+          a(href='https://instagram.com/michaelpaulukonis/') Instagram
+        li
+          a(href='http://www.twitter.com/OtherMichael') Twitter
+        li
+          a(href='https://github.com/michaelpaulukonis') GitHub
+      p other websites
+      ul.inline-list
+        li
+          a(href='http://michaelpaulukonis.com') michaelpaulukonis.com
+        li
+          a(href='http://www.xradiograph.com') xradiograph.com
+      p other web-projects
+      ul.inline-list
+        li
+          a(href='https://michaelpaulukonis.github.io/polychrome.p5/') polychrometext
+        li
+          a(href='https://michaelpaulukonis.github.io/imagetexter.p5/') imagetexter
+        li
+          a(href='http://poeticalbot.tumblr.com/') poetical bot
+        li
+          a(href='https://leanstooneside.tumblr.com/') List Mania
+        li
+          a(href='http://michaelpaulukonis.github.io/malepropp') fairy tale generator
+        li
+          a(href='http://michaelpaulukonis.github.io/poetrygen/') poetry generators
+        li
+          a(href='http://www.xradiograph.com/WordSalad/BotProjects') bot projects
+    
+    BlogSection(:blogs='blogs')
 
-      <div class="bio">
-        <h1>Michael Paulukonis</h1>
-        <p>I am a developer/architect and digital artist living in Framingham, MA</p>
-        <ul class="inline-list">
-          <li><a href="https://instagram.com/michaelpaulukonis/">Instagram</a></li>
-          <li><a href="http://www.twitter.com/OtherMichael">Twitter</a></li>
-          <li><a href="https://github.com/michaelpaulukonis">GitHub</a></li>
-        </ul>
-
-        <p>other websites</p>
-        <ul class="inline-list">
-          <li><a href="http://michaelpaulukonis.com">michaelpaulukonis.com</a></li>
-          <li><a href="http://www.xradiograph.com">xradiograph.com</a></li>
-        </ul>
-
-        <p>other web-projects</p>
-        <ul class="inline-list">
-          <li><a href="https://michaelpaulukonis.github.io/polychrome.p5/">polychrometext</a></li>
-          <li><a href="https://michaelpaulukonis.github.io/imagetexter.p5/">imagetexter</a></li>
-          <li><a href="http://poeticalbot.tumblr.com/">poetical bot</a></li>
-          <li><a href="https://leanstooneside.tumblr.com/">List Mania</a></li>
-          <li><a href="http://michaelpaulukonis.github.io/malepropp">fairy tale generator</a></li>
-          <li><a href="http://michaelpaulukonis.github.io/poetrygen/">poetry generators</a></li>
-          <li><a href="http://www.xradiograph.com/WordSalad/BotProjects">bot projects</a></li>
-        </ul>
-      </div>
-
-
-      <BlogSection :blogs="blogs" />
-    </div>
-  </div>
 </template>
 
 <script>
@@ -90,6 +93,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.page-index {
+  background-image: linear-gradient(to bottom right, #973999, #f8598b, #f7bf00);
+  background-attachment: fixed;
+}
+
 .inline-list {
   list-style: none;
   margin: 0;
