@@ -114,16 +114,17 @@ export default {
 
 .inline-list li a {
   padding: 2px 8px;
-  border: 1px solid #96ebe1;
-  border-radius: 2px;
+  background: #38ef7d;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
+  color: #000;
 }
 
 .inline-list li a:hover {
   background: #96ebe1;
-  color: #fff;
+  filter: invert(100%);
+    -webkit-filter: invert(100%);
 }
 </style>
