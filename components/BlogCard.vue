@@ -67,7 +67,7 @@
 
     &__description {
       margin: 0;
-      color: $grey-2;
+      // color: $grey-2;
     }
   }
 </style>

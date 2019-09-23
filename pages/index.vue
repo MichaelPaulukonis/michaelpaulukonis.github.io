@@ -2,8 +2,10 @@
 .page-index
   .container
     .bio
-      h1 Michael Paulukonis
-      p I am a developer/architect and digital artist living in Framingham, MA
+      h2 Michael Paulukonis
+      
+      .thingy I am a developer/architect and digital artist living in Framingham, MA
+      
       ul.inline-list
         li
           a(href='https://instagram.com/michaelpaulukonis/') Instagram
@@ -11,13 +13,17 @@
           a(href='http://www.twitter.com/OtherMichael') Twitter
         li
           a(href='https://github.com/michaelpaulukonis') GitHub
-      p other websites
+      
+      .thingy other websites
+      
       ul.inline-list
         li
           a(href='http://michaelpaulukonis.com') michaelpaulukonis.com
         li
           a(href='http://www.xradiograph.com') xradiograph.com
-      p other web-projects
+
+      .thingy other web-projects
+      
       ul.inline-list
         li
           a(href='https://michaelpaulukonis.github.io/polychrome.p5/') polychrometext
@@ -98,6 +104,22 @@ export default {
   background-attachment: fixed;
 }
 
+.thingy {
+  display: inline-block;
+  background-color: #7d5cff;
+  color: #fcfcfc;
+  line-height: 1.15;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+  font-weight: 700;
+  // margin-bottom: 15px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 1.5em;
+  font-family: Neuton, "Hoefler Text", Palatino, Baskerville, Georgia,
+    "Times New Roman", serif;
+}
+
 .inline-list {
   list-style: none;
   margin: 0;
@@ -106,6 +128,7 @@ export default {
 
 .inline-list li {
   display: inline-block;
+  line-height: 0;
 }
 
 .inline-list li {
@@ -125,6 +148,6 @@ export default {
 .inline-list li a:hover {
   background: #96ebe1;
   filter: invert(100%);
-    -webkit-filter: invert(100%);
+  -webkit-filter: invert(100%);
 }
 </style>

@@ -1,11 +1,17 @@
 {
-  "name": "nuxt-markdown-blog-starter",
+  "name": "personal-github-dot-io-portal-thingy",
   "version": "1.0.0",
-  "author": "marinaaisa <marina@marinaaisa.com>",
-  "private": true,
+  "author": "michael paulukonis <michael.paulukonis@gmail.com>",
+  "private": false,
   "engines": {
     "node": ">=8.0.0",
     "npm": ">=5.0.0"
+  },
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "nuxt",
+    "generate": "nuxt generate",
+    "analyze": "nuxt build --analyze"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^0.1.2",
@@ -14,11 +20,6 @@
     "nuxt-i18n": "^5.8.5",
     "nuxt-webfontloader": "^1.0.0",
     "vue-lazyload": "^1.2.6"
-  },
-  "scripts": {
-    "dev": "nuxt",
-    "generate": "nuxt generate",
-    "analyze": "nuxt build --analyze"
   },
   "devDependencies": {
     "frontmatter-markdown-loader": "^1.6.0",
