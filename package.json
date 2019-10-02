@@ -17,6 +17,7 @@
     "bump": "npm version patch",
     "prod": "npm prune --production",
     "publish": "npm run bump && npm run generate && npm run deploy",
+    "publish:only": "NODE_DEBUG=gh-pages npm run deploy",
     "lint:fix": "standard --fix",
     "lint": "standard"
   },
