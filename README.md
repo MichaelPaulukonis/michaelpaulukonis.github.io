@@ -1,3 +1,18 @@
+# some notes
+
+- There MUST be a `.nojekyll` file (empty) in your master (gh-pages linked) branch
+- User pages can ONLY be generate from the `master` branch (did this change???)
+
+All dev work is done in the `development` branch.
+
+1. `npm run generate`
+2. `npm run deploy`
+
+or, if your git tree is clean:
+
+1. `npm run publish`
+
+
 <p align="center">
   <a href="https://nuxtjs.org/">
   <img src="https://avatars2.githubusercontent.com/u/23360933?s=200&v=4" height="60">
