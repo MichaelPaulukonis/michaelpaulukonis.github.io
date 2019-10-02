@@ -16,7 +16,7 @@
     "deploy": "gh-pages -d dist",
     "bump": "npm version patch",
     "prod": "npm prune --production",
-    "publish": "npm run bump && npm run build && npm run deploy",
+    "publish": "npm run bump && npm run generate && npm run deploy",
     "lint:fix": "standard --fix",
     "lint": "standard"
   },

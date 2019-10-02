@@ -124,7 +124,7 @@
         return {
           hid: 'alternate-hreflang-' + this.showLocales[0].iso,
           rel: 'alternate',
-          href: `${process.env.baseUrl + (this.showLocales[0].code === 'en' ? '' : '/es')}/blog/${this.trans}`,
+          href: `${process.env.baseUrl}en/blog/${this.trans}`,
           hreflang: this.showLocales[0].code
         }
       },
