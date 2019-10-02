@@ -53,7 +53,7 @@ export default {
   async asyncData ({ app }) {
 
     async function asyncImport (blogName) {
-      const wholeMD = await import(`~/contents/${app.i18n.locale}/blog/${blogName}.md`)
+      const wholeMD = await import(`~/contents/en/blog/${blogName}.md`)
       return {
         ...wholeMD.attributes,
         ...{          image: {
@@ -82,7 +82,7 @@ export default {
     return {
       title: this.$t('indexPageHead.title'),
       htmlAttrs: {
-        lang: this.$i18n.locale,
+        lang: 'en',
       },
       meta: [
         { name: "author", content: "Michael J. Paulukonis" },

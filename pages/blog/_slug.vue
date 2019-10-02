@@ -87,7 +87,7 @@
       return {
         title: this.pageTitle,
         htmlAttrs: {
-          lang: this.$i18n.locale,
+          lang: 'en'
         },
         meta: [
           { name: "author", content: "Michael Paulukonis" },
@@ -96,9 +96,6 @@
           { property: "og:image", content: this.ogImage },
           { name: "twitter:description", content: this.description },
           { name: "twitter:image", content: this.ogImage }
-        ],
-        link: [
-          this.hreflang
         ]
       };
     },
