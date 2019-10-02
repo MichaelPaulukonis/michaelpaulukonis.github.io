@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "nuxt",
-    "generate": "nuxt generate",
+    "generate": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "analyze": "nuxt build --analyze",
     "clean": "rm -rf dist",
     "deploy": "gh-pages -d dist -b master",
