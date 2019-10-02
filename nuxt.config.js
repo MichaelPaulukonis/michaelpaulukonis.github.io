@@ -1,12 +1,12 @@
+import blogsEn from './contents/en/blogsEn.js'
 const builtAt = new Date().toISOString()
 const path = require('path')
 const { I18N } = require('./locales/i18n-nuxt-config')
-import blogsEn from './contents/en/blogsEn.js'
 
 const productionUrl = {
-  en: "/en"
-};
-const baseUrl = 'https://marinaaisa.com';
+  en: '/en'
+}
+const baseUrl = 'https://michaelpaulukonis.github.io'
 
 module.exports = {
   env: {
@@ -14,35 +14,27 @@ module.exports = {
     productionUrl
   },
   head: {
-    title: 'Marina Aisa | Product Designer & Front-end Developer',
+    title: 'Michael Paulukonis| Software Architect and Code Artists',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' },
       { name: 'msapplication-TileColor', content: '#ffffff' },
-      { name: 'msapplication-TileImage', content: '/favicons/mstile-144x144.png' },
+      { name: 'msapplication-TileImage', content: '/favicons/mstile-150x150.png' },
       { name: 'theme-color', content: '#c1c1c1' },
       { name: 'robots', content: 'index, follow' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@marinaaisa' },
+      { name: 'twitter:site', content: '@othermichael' },
       { property: 'og:type', content: 'profile' },
       { property: 'og:updated_time', content: builtAt }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicons/favicon-16x16.png', sizes: '16x16' },
       { rel: 'icon', type: 'image/png', href: '/favicons/favicon-32x32.png', sizes: '32x32' },
-      { rel: 'icon', type: 'image/png', href: '/favicons/android-chrome-96x96.png', sizes: '96x96' },
       { rel: 'icon', type: 'image/png', href: '/favicons/android-chrome-192x192.png', sizes: '192x192' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-57x57.png', sizes: '57x57' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-60x60.png', sizes: '60x60' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-72x72.png', sizes: '72x72' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-76x76.png', sizes: '76x76' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-114x114.png', sizes: '114x114' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-120x120.png', sizes: '120x120' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-144x144.png', sizes: '144x144' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-152x152.png', sizes: '152x152' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-180x180.png', sizes: '180x180' },
+      { rel: 'icon', type: 'image/png', href: '/favicons/android-chrome-512x512.png', sizes: '512x512' },
+      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon.png', sizes: '180x180' },
       { rel: 'mask-icon', type: 'image/png', href: '/favicons/safari-pinned-tab.svg', color: '#c1c1c1' },
-      { rel: 'manifest', href: '/manifest.json' }
+      { rel: 'manifest', href: '/favicons/site.webmanifest' }
     ]
   },
   /*
@@ -71,7 +63,7 @@ module.exports = {
         include: path.resolve(__dirname, 'contents'),
         options: {
           vue: {
-            root: "dynamicMarkdown"
+            root: 'dynamicMarkdown'
           }
         }
       }, {
@@ -90,11 +82,11 @@ module.exports = {
           limit: 1000,
           name: 'img/[name].[hash:7].[ext]'
         }
-      });
+      })
     }
   },
   plugins: ['~/plugins/lazyload', '~/plugins/globalComponents', { src: '~plugins/ga.js', ssr: false }],
-  modules: [  
+  modules: [
     '@nuxtjs/style-resources',
     ['nuxt-i18n', I18N],
     'nuxt-webfontloader'
@@ -106,7 +98,7 @@ module.exports = {
       '@/assets/css/utilities/_helpers.scss',
       '@/assets/css/base/_grid.scss',
       '@/assets/css/base/_buttons.scss'
-    ],
+    ]
   },
 
   webfontloader: {
@@ -120,6 +112,6 @@ module.exports = {
     routes: [
       '/es', '404'
     ]
-    .concat(blogsEn.map(w => `/blog/${w}`))
+      .concat(blogsEn.map(w => `/blog/${w}`))
   }
 }

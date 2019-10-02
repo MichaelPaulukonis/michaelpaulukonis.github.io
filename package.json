@@ -11,7 +11,14 @@
     "start": "npm run dev",
     "dev": "nuxt",
     "generate": "nuxt generate",
-    "analyze": "nuxt build --analyze"
+    "analyze": "nuxt build --analyze",
+    "clean": "rm -rf dist",
+    "deploy": "gh-pages -d dist",
+    "bump": "npm version patch",
+    "prod": "npm prune --production",
+    "publish": "npm run bump && npm run build && npm run deploy",
+    "lint:fix": "standard --fix",
+    "lint": "standard"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^0.1.2",
@@ -23,12 +30,15 @@
   },
   "devDependencies": {
     "frontmatter-markdown-loader": "^1.6.0",
+    "gh-pages": "^2.1.1",
     "highlight.js": "^9.15.6",
     "node-sass": "^4.11.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "responsive-loader": "^1.2.0",
     "sass-loader": "^7.1.0",
-    "sharp": "^0.22.0"
+    "sharp": "^0.22.0",
+    "standard": "^14.3.1",
+    "start-server-and-test": "^1.10.2"
   }
 }

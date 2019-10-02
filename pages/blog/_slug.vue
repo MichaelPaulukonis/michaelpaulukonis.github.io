@@ -20,7 +20,7 @@
           </div>
         </div>
         <ImageResponsive
-          :imageURL="'blog/' + id + '/_main.jpg'"
+          :imageURL="'blog/' + id + '/' + image.main"
           v-if="!noMainImage"
           width="100%"
           class="elevate-cover__img"
@@ -71,8 +71,8 @@
         renderFunc: fileContent.vue.render,
         staticRenderFuncs: fileContent.vue.staticRenderFns,
         image: {
-          main: attr.image && attr.image.main,
-          og: attr.image && attr.image.og
+          main: (attr.image && attr.image.main) || '_main.jpg',
+          og: (attr.image && attr.image.og) || '_thumbnail.jpg'
         }
       }
     },
@@ -90,7 +90,7 @@
           lang: this.$i18n.locale,
         },
         meta: [
-          { name: "author", content: "Marina Aisa" },
+          { name: "author", content: "Michael Paulukonis" },
           { name: "description", property: "og:description", content: this.description, hid: "description" },
           { property: "og:title", content: this.pageTitle },
           { property: "og:image", content: this.ogImage },
@@ -109,10 +109,10 @@
 
     computed: {
       ogImage () {
-        return `${process.env.baseUrl}/images/blog/${this.id}/_thumbnail.jpg`;
+        return `${process.env.baseUrl}/images/blog/${this.id}/${this.image.og}`;
       },
       pageTitle () {
-        return this.title + ' – Marina Aisa';
+        return this.title + ' – Michael Paulukonis';
       },
       showLocales () {
         return this.$i18n.locales.filter(locale => locale.code !== this.$i18n.locale)

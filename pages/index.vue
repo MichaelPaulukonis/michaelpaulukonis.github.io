@@ -47,19 +47,24 @@
 <script>
 import BlogSection from "~/components/Sections/BlogSection"
 
-import blogsEn from '~/contents/en/blogsEn.js'
+import pages from '~/contents/en/blogsEn.js'
 
 export default {
   async asyncData ({ app }) {
 
-    const blogs = blogsEn
-
     async function asyncImport (blogName) {
       const wholeMD = await import(`~/contents/${app.i18n.locale}/blog/${blogName}.md`)
-      return wholeMD.attributes
+      return {
+        ...wholeMD.attributes,
+        ...{          image: {
+            main: (wholeMD.attributes.image && wholeMD.attributes.image.main) || '_main.jpg',
+            og: (wholeMD.attributes.image && wholeMD.attributes.image.og) || '_thumbnail.jpg'
+          }
+        }
+      }
     }
 
-    return Promise.all(blogs.map(blog => asyncImport(blog)))
+    return Promise.all(pages.map(blog => asyncImport(blog)))
       .then((res) => {
         return {
           blogs: res
@@ -112,9 +117,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   text-align: left;
   font-weight: 700;
-  // margin-bottom: 15px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 6px;
   font-size: 1.5em;
   font-family: Neuton, "Hoefler Text", Palatino, Baskerville, Georgia,
     "Times New Roman", serif;

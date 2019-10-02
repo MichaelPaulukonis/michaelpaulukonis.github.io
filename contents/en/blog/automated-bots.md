@@ -5,6 +5,10 @@ year: 14 September 2019
 color: '#8e7964'
 id: 'automated-bots'
 noMainImage: false
+image: {
+  main: '_main.png',
+  og: '_thumbnail.png'
+}
 description: |
   Notes on automated bots, mostly posting to Twitter or Tumblr
 ---
@@ -26,8 +30,6 @@ I thought about this for over a year, until somebody goaded me into [actualizing
 I started out with Google-spreadhsheet-script bots, and "graduated" to NodeJs bots running on Heroku.
 
 I have some ideas for future bots, but who knows. These things are fun, programming exercises, linguistic exercises, artistic expressions, artistic experiments, autistic experiments, and whoknowswhat.
-
-This tiny url - <http://tinyurl.com/xraybots> - points back to this page. But is tinier.
 
 Bots that use Tracery/[Cheap Bots Done Quick](http://cheapbotsdonequick.com/) may have some source and notes @ <https://github.com/MichaelPaulukonis/tracery-grammars>
 

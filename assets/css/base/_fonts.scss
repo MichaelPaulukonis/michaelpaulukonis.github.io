@@ -4,11 +4,12 @@ $font-family-blog:            'Tiempos Headline', Arial, sans-serif;
 $line-height-base:            1.5;
 $fs-base:                     1.6rem;
 $fs-base-responsive:          1.4rem;
+$fs-extra-large:              4rem;
 $fs-large:                    3rem;
 $fs-large-responsive:         2rem;
 $fs-small:                    $fs-base-responsive;
 $fs-small-responsive:         1rem;
-$fs-h1:                       $fs-large;
+$fs-h1:                       $fs-extra-large;
 $fs-h2:                       $fs-large;
 $fs-h3:                       2rem;
 $fs-h4:                       $fs-base;
@@ -64,7 +65,7 @@ li{
   margin-bottom: 2em;
 
   @media (min-width: $screen-sm){
-    margin-bottom: 0;
+    margin-bottom: 2em;
   }
 }
 

@@ -4,7 +4,7 @@
       :to="localePath({ name: 'blog-slug', params: { slug: blog.name }})"
     >
       <ImageResponsive
-        :imageURL="`blog/${blog.id}/_thumbnail.jpg`"
+        :imageURL="`blog/${blog.id}/${blog.image.og}`"
         :classes="'cardThumbnail'"
         :width="'952'"
         :height="'509'"
@@ -14,7 +14,7 @@
       </h3>
       <p class="blog__description">
         {{ blog.description }}
-      </p> 
+      </p>
     </nuxt-link>
   </li>
 </template>
