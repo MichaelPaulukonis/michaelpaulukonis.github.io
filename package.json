@@ -1,6 +1,6 @@
 {
   "name": "personal-github-dot-io-portal-thingy",
-  "version": "1.0.7",
+  "version": "1.0.5",
   "author": "michael paulukonis <michael.paulukonis@gmail.com>",
   "private": false,
   "engines": {
@@ -13,7 +13,7 @@
     "generate": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "analyze": "nuxt build --analyze",
     "clean": "rm -rf dist",
-    "deploy": "gh-pages -d dist -b master",
+    "deploy": "gh-pages -t -d dist -b master",
     "bump": "npm version patch",
     "prod": "npm prune --production",
     "publish": "npm run bump && npm run generate && npm run deploy",
