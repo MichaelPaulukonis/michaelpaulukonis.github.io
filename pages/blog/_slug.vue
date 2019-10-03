@@ -5,8 +5,16 @@
         <div class="elevate-cover__textOffset">
           <div class="elevate-cover__left">
             <nuxt-link :to="localePath('index')">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 4" aria-hidden="true" style="width: 16px; transform: rotate(180deg);">
-                  <polygon fill="currentColor" points="0 2.33 4.72 2.33 3.53 3.53 4 4 6 2 4 0 3.53 0.47 4.72 1.67 0 1.67 0 2.33"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 6 4"
+                aria-hidden="true"
+                style="width: 16px; transform: rotate(180deg);"
+              >
+                <polygon
+                  fill="currentColor"
+                  points="0 2.33 4.72 2.33 3.53 3.53 4 4 6 2 4 0 3.53 0.47 4.72 1.67 0 1.67 0 2.33"
+                />
               </svg>
               {{ $t('comeBack') }}
             </nuxt-link>
@@ -24,7 +32,8 @@
           v-if="!noMainImage"
           width="100%"
           class="elevate-cover__img"
-          :alt="'Blog picture'" />
+          :alt="'Blog picture'"
+        />
         <component
           v-else
           class="elevate-cover__img"
@@ -37,17 +46,16 @@
         <DynamicMarkdown
           :render-func="renderFunc"
           :static-render-funcs="staticRenderFuncs"
-          :extra-component="extraComponent" />
+          :extra-component="extraComponent"
+        />
       </no-ssr>
     </div>
-    <Subscribe/>
   </div>
 </template>
 
 <script lang="js">
   
   import DynamicMarkdown from "~/components/Markdown/DynamicMarkdown.vue"
-
 
   export default {
 
@@ -140,21 +148,25 @@
 .overflowhidden {
   overflow: hidden;
 }
+.blogSelected {
+  background-image: linear-gradient(to bottom right, #fff, #ddd, #eee);
+}
+
 .blogSelected-horizontalImage {
   height: 56rem;
   background-size: contain;
-  transition: all ease .35s;
+  transition: all ease 0.35s;
   opacity: 0;
 
-  &[lazy='loading'] {
+  &[lazy="loading"] {
     filter: blur(15px);
-    background-repeat: no-repeat!important;
-    background-size: contain!important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
   }
-  &[lazy='loaded'] {
+  &[lazy="loaded"] {
     opacity: 1;
-    background-repeat: no-repeat!important;
-    background-size: contain!important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
   }
   .intro {
     display: flex;
@@ -165,11 +177,12 @@
   flex-direction: column;
   min-height: 459px;
 
-  @media (min-width: $screen-md){
+  @media (min-width: $screen-md) {
     flex-direction: row;
   }
 
-  &__img, &__textOffset {
+  &__img,
+  &__textOffset {
     width: 100%;
   }
 
@@ -179,7 +192,7 @@
     padding: 2.4rem;
     margin-bottom: auto;
 
-    @media (min-width: $screen-md){
+    @media (min-width: $screen-md) {
       margin-left: auto;
       padding: 2.4rem 4rem 2.4rem 2.4rem;
     }
@@ -193,10 +206,10 @@
 
   &__title {
     font-size: 3rem;
-    font-family: 'Tiempos Headline', Arial, sans-serif;
+    font-family: "Tiempos Headline", Arial, sans-serif;
     color: $secondary;
 
-    @media (min-width: $screen-sm){
+    @media (min-width: $screen-sm) {
       font-size: 4rem;
     }
   }
@@ -204,8 +217,8 @@
   &__description {
     margin: 0;
     opacity: 0;
-    animation: fadeinmove .5s ease;
-    animation-delay: .5s;
+    animation: fadeinmove 0.5s ease;
+    animation-delay: 0.5s;
     animation-fill-mode: forwards;
   }
 }
@@ -222,7 +235,7 @@
     display: block;
   }
 
-  @media (min-width: $screen-sm){
+  @media (min-width: $screen-sm) {
     padding: 7.2rem 0;
     font-size: 19px;
   }
@@ -231,7 +244,7 @@
     padding-bottom: 3.2rem;
     padding-bottom: 2rem;
 
-    @media (max-width: $screen-sm){
+    @media (max-width: $screen-sm) {
       font-size: 2rem;
     }
   }
@@ -265,9 +278,9 @@
     display: inline;
     color: $secondary;
     font-size: 14px;
-    padding: .2em .4em;
+    padding: 0.2em 0.4em;
 
-    @media (min-width: $screen-sm){
+    @media (min-width: $screen-sm) {
       font-size: 16px;
     }
   }

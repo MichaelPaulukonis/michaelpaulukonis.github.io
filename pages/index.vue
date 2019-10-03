@@ -2,7 +2,7 @@
 .page-index
   .container
     .bio
-      h2 Michael Paulukonis
+      h1 Michael Paulukonis
       
       .thingy I am a developer/architect and digital artist living in Framingham, MA
       
@@ -107,6 +107,13 @@ export default {
 .page-index {
   background-image: linear-gradient(to bottom right, #973999, #f8598b, #f7bf00);
   background-attachment: fixed;
+}
+
+.bio h1 {
+  margin-bottom: 1rem;
+  font-size: 6rem;
+  line-height: 5rem;
+  margin-top: 2rem;
 }
 
 .thingy {
