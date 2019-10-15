@@ -39,6 +39,8 @@
           a(href='http://michaelpaulukonis.github.io/poetrygen/') poetry generators
         li
           a(href='http://www.xradiograph.com/WordSalad/BotProjects') bot projects
+        li
+          a(:href="url + '/sketches'") web sketches
     
     BlogSection(:blogs='blogs')
 
@@ -46,7 +48,6 @@
 
 <script>
 import BlogSection from "~/components/Sections/BlogSection"
-
 import pages from '~/contents/en/blogsEn.js'
 
 export default {
@@ -96,9 +97,10 @@ export default {
   },
 
   computed: {
-    ogImage: function () {
+    ogImage: () => {
       return;
-    }
+    },
+    url: () => process.env.baseUrl
   }
 }
 </script>

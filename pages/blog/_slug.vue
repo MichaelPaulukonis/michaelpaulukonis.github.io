@@ -138,7 +138,7 @@
         if (!this.extraComponent) {
           return null
         }
-        return () => import(`~/components/blog/${this.extraComponent}.vue`)
+        // return () => import(`~/components/blog/${this.extraComponent}.vue`)
       }
     }
   }
