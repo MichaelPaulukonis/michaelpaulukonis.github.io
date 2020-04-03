@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{113:function(e,t,o){"use strict";o.r(t),t.default={title:"Michael J. Paulukonis - Software Architect, Web Developer, and Code Artists",description:"I’m a Full-Stack Developer and Architect living in Metro-West Boston."}}}]);
