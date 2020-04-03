@@ -15,6 +15,7 @@
     "clean": "rm -rf dist",
     "deploy": "gh-pages -t -d dist -b master",
     "bump": "npm version patch",
+    "open": "open http://michaelpaulukonis.github.io",
     "prod": "npm prune --production",
     "publish": "npm run bump && npm run generate && npm run deploy",
     "publish:only": "NODE_DEBUG=gh-pages npm run deploy",

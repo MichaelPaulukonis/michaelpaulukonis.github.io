@@ -13,6 +13,10 @@
           a(href='http://www.twitter.com/OtherMichael') Twitter
         li
           a(href='https://github.com/michaelpaulukonis') GitHub
+        li
+          a(href='https://giphy.com/channel/michaelpaulukonis') Giphy
+        li
+          a(href='https://michaelpaulukonis.tumblr.com/') Tumblr
       
       .thingy other websites
       
