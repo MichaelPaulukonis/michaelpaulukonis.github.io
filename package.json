@@ -1,6 +1,6 @@
 {
   "name": "personal-github-dot-io-portal-thingy",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "author": "michael paulukonis <michael.paulukonis@gmail.com>",
   "private": false,
   "engines": {
@@ -44,6 +44,5 @@
     "responsive-loader": "^1.2.0",
     "sass-loader": "^8.0.0",
     "sharp": "^0.23.4"
-
   }
 }
