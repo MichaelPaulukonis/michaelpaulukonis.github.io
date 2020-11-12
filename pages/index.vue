@@ -3,56 +3,56 @@
   .container
     .bio
       h1 Michael Paulukonis
-      
-      .thingy I am a developer/architect and digital artist living in Framingham, MA
-      
-      ul.inline-list
-        li
-          a(href='https://instagram.com/michaelpaulukonis/') Instagram
-        li
-          a(href='http://www.twitter.com/OtherMichael') Twitter
-        li
-          a(href='https://github.com/michaelpaulukonis') GitHub
-        li
-          a(href='https://giphy.com/channel/michaelpaulukonis') Giphy
-        li
-          a(href='https://michaelpaulukonis.tumblr.com/') Tumblr
-      
-      .thingy other websites
-      
-      ul.inline-list
-        li
-          a(href='http://michaelpaulukonis.com') michaelpaulukonis.com
-        li
-          a(href='http://www.xradiograph.com') xradiograph.com
 
-      .thingy other web-projects
-      
-      ul.inline-list
-        li
-          a(href='https://michaelpaulukonis.github.io/polychrome.p5/') polychrometext
-        li
-          a(href='https://michaelpaulukonis.github.io/imagetexter.p5/') imagetexter
-        li
-          a(href='http://poeticalbot.tumblr.com/') poetical bot
-        li
-          a(href='https://leanstooneside.tumblr.com/') List Mania
-        li
-          a(href='http://michaelpaulukonis.github.io/malepropp') fairy tale generator
-        li
-          a(href='http://michaelpaulukonis.github.io/poetrygen/') poetry generators
-        li
-          a(href='http://www.xradiograph.com/WordSalad/BotProjects') bot projects
-        li
-          a(:href="url + '/sketches'") web sketches
-    
-    BlogSection(:blogs='blogs')
+      .sectionhead I am a developer/architect and digital artist living in Framingham, MA
 
+      ul.inline-list
+        li(v-for="site in accounts", :key="site.url")
+          a(:href="site.url") {{ site.name }}
+
+      .sectionhead other websites
+
+      ul.inline-list
+        li(v-for="site in websites", :key="site.url")
+          a(:href="site.url") {{ site.name }}
+
+      .sectionhead other web-projects
+
+      ul.inline-list
+        li(v-for="project in projects", :key="project.url")
+          a(:href="project.url") {{ project.name }}
+
+    BlogSection(:blogs="blogs")
 </template>
 
 <script>
 import BlogSection from "~/components/Sections/BlogSection"
 import pages from '~/contents/en/blogsEn.js'
+
+const projects = [
+  { url: 'https://michaelpaulukonis.github.io/polychrome.p5/', name: 'polychrometext' },
+  { url: 'https://michaelpaulukonis.github.io/imagetexter.p5/', name: 'imagetexter' },
+  { url: 'https://michaelpaulukonis.github.io/obscurus/', name: 'OBSCURURS ' },
+  { url: 'http://poeticalbot.tumblr.com/', name: 'poetical bot' },
+  { url: 'https://leanstooneside.tumblr.com/', name: 'List Mania' },
+  { url: 'http://michaelpaulukonis.github.io/malepropp', name: 'fairy tale generator' },
+  { url: 'http://michaelpaulukonis.github.io/poetrygen/', name: 'poetry generators' },
+  { url: 'http://www.xradiograph.com/WordSalad/BotProjects', name: 'bot projects' },
+  { url: `${process.env.baseUrl}/sketches`, name: 'web sketches' }
+]
+
+const websites = [
+  { url: 'http://michaelpaulukonis.com', name: 'michaelpaulukonis.com' }
+  // , { url: 'http://www.xradiograph.com', name: 'xradiograph.com' }
+]
+
+const accounts = [
+  { url: 'https://instagram.com/michaelpaulukonis/', name: 'Instagram' }
+  , { url: 'http://www.twitter.com/OtherMichael', name: 'Twitter' }
+  , { url: 'https://github.com/michaelpaulukonis', name: 'GitHub' }
+  , { url: 'https://giphy.com/channel/michaelpaulukonis', name: 'Giphy' }
+  , { url: 'https://michaelpaulukonis.tumblr.com/', name: 'Tumblr' }
+]
 
 export default {
   async asyncData ({ app }) {
@@ -61,7 +61,8 @@ export default {
       const wholeMD = await import(`~/contents/en/blog/${blogName}.md`)
       return {
         ...wholeMD.attributes,
-        ...{          image: {
+        ...{
+          image: {
             main: (wholeMD.attributes.image && wholeMD.attributes.image.main) || '_main.jpg',
             og: (wholeMD.attributes.image && wholeMD.attributes.image.og) || '_thumbnail.jpg'
           }
@@ -72,12 +73,21 @@ export default {
     return Promise.all(pages.map(blog => asyncImport(blog)))
       .then((res) => {
         return {
-          blogs: res
+          blogs: res,
+          projects,
+          websites,
+          accounts
         }
       })
   },
 
   components: { BlogSection },
+
+  // data () {
+  //   return {
+  //     projects: projects
+  //   }
+  // },
 
   transition: {
     name: 'slide-fade'
@@ -122,7 +132,7 @@ export default {
   margin-top: 2rem;
 }
 
-.thingy {
+.sectionhead {
   display: inline-block;
   background-color: #7d5cff;
   color: #fcfcfc;
