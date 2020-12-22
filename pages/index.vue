@@ -32,7 +32,7 @@ import pages from '~/contents/en/blogsEn.js'
 const projects = [
   { url: 'https://michaelpaulukonis.github.io/polychrome.p5/', name: 'polychrometext' },
   { url: 'https://michaelpaulukonis.github.io/imagetexter.p5/', name: 'imagetexter' },
-  { url: 'https://michaelpaulukonis.github.io/obscurus/', name: 'OBSCURURS ' },
+  { url: 'https://michaelpaulukonis.github.io/obscurus/', name: 'OBSCURUS ' },
   { url: 'http://poeticalbot.tumblr.com/', name: 'poetical bot' },
   { url: 'https://leanstooneside.tumblr.com/', name: 'List Mania' },
   { url: 'http://michaelpaulukonis.github.io/malepropp', name: 'fairy tale generator' },
