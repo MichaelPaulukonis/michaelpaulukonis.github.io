@@ -52,6 +52,7 @@ const accounts = [
   , { url: 'https://github.com/michaelpaulukonis', name: 'GitHub' }
   , { url: 'https://giphy.com/channel/michaelpaulukonis', name: 'Giphy' }
   , { url: 'https://michaelpaulukonis.tumblr.com/', name: 'Tumblr' }
+  , { url: 'https://www.flickr.com/photos/othermichael/', name: 'Flickr' }
 ]
 
 export default {
