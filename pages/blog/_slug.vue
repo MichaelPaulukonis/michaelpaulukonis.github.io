@@ -31,7 +31,7 @@
           </div>
         </div>
         <ImageResponsive
-          :imageURL="'blog/' + id + '/_main.jpg'"
+          :imageURL="'blog/' + id + '/' + image.main"
           v-if="!noMainImage"
           width="100%"
           class="elevate-cover__img"
@@ -115,10 +115,10 @@
 
     computed: {
       ogImage () {
-        return `${process.env.baseUrl}/images/blog/${this.id}/_thumbnail.jpg`;
+        return `${process.env.baseUrl}/images/blog/${this.id}/${this.image.og}`;
       },
       pageTitle () {
-        return this.title + ' – Marina Aisa';
+        return this.title + ' – Michael Paulukoni';
       },
       showLocales () {
         return this.$i18n.locales.filter(locale => locale.code !== this.$i18n.locale)
