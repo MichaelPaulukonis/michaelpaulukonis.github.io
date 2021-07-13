@@ -77,8 +77,8 @@
         renderFunc: `(${fileContent.vue.render})`,
         staticRenderFuncs: `[${fileContent.vue.staticRenderFns}]`,
         image: {
-          main: attr.image && attr.image.main,
-          og: attr.image && attr.image.og
+          main: (attr.image && attr.image.main) || '_main.jpg',
+          og: (attr.image && attr.image.og) || '_thumbnail.jpg'
         }
       }
     },
