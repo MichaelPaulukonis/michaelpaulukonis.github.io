@@ -1,5 +1,6 @@
 export default [
   'polychrometext-introduction',
   'automated-bots',
-  'watmap'
+  'watmap',
+  'publications'
 ]
