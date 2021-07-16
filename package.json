@@ -1,10 +1,10 @@
 {
-  "name": "nuxt-markdown-blog-starter",
-  "version": "1.0.0",
-  "author": "marinaaisa <marina@marinaaisa.com>",
+  "name": "nuxt-markdown-blog-starter-personalized",
+  "version": "2.0.0",
+  "author": "michael paulukonis <michael.paulukonis@gmail.com>",
   "private": true,
   "engines": {
-    "node": ">=8.0.0",
+    "node": ">=10.0.0",
     "npm": ">=5.0.0"
   },
   "dependencies": {
@@ -20,13 +20,28 @@
   "scripts": {
     "dev": "nuxt",
     "generate": "nuxt generate",
-    "analyze": "nuxt build --analyze"
+    "analyze": "nuxt build --analyze",
+    "generate:personal": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "clean": "rm -rf dist",
+    "deploy": "gh-pages -t -d dist -b master",
+    "bump": "npm version patch",
+    "open": "open http://michaelpaulukonis.github.io",
+    "prod": "npm prune --production",
+    "publish": "npm run bump && npm run generate && npm run deploy",
+    "publish:only": "NODE_DEBUG=gh-pages npm run deploy",
+    "lint:fix": "standard --fix",
+    "lint": "standard"
   },
   "devDependencies": {
     "frontmatter-markdown-loader": "^3.1.0",
+    "gh-pages": "^3.2.3",
+    "highlight.js": "^11.1.0",
     "node-sass": "^4.13.0",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
     "responsive-loader": "^1.2.0",
     "sass-loader": "^8.0.0",
-    "sharp": "^0.23.4"
+    "sharp": "^0.23.4",
+    "standard": "^16.0.3"
   }
 }
