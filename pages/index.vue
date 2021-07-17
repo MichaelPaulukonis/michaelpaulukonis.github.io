@@ -21,6 +21,7 @@
       ul.inline-list
         li(v-for="project in projects", :key="project.url")
           a(:href="project.url") {{ project.name }}
+
     BlogSection(:blogs="blogs")
 </template>
 
@@ -28,7 +29,6 @@
 import BlogSection from "~/components/Sections/BlogSection";
 
 import blogsEn from "~/contents/en/blogsEn.js";
-import blogsEs from "~/contents/es/blogsEs.js";
 
 const projects = [
   {
@@ -73,7 +73,8 @@ const accounts = [
 
 export default {
   async asyncData({ app }) {
-    const blogs = app.i18n.locale === "en" ? blogsEn : blogsEs;
+    // const blogs = app.i18n.locale === "en" ? blogsEn : blogsEs;
+    const blogs = blogsEn;
 
     async function asyncImport(blogName) {
       const wholeMD = await import(

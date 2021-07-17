@@ -7,10 +7,10 @@ li.blog
       :width="'952'", 
       :height="'509'", 
       :alt="blog.cardAlt")
-    h3.blog__title
+
+    span.blog__title
       | {{ blog.title }}
-      
-    p.blog__description
+    span.blog__description
       | {{ blog.description }}
 
 </template>
