@@ -13,17 +13,6 @@
           </div>
           <div class="elevate-cover__left">
             <span class="blogSelected-year">{{ year }}</span>
-            —
-            <template v-if="trans">
-              <nuxt-link
-                v-for="(locale, i) in showLocales"
-                :key="i"
-                :to="`${locale.code == 'en' ? '' : '/' + locale.code}/blog/${trans}`"
-              >
-                  {{ $t('changeLanguagePost') }}
-              </nuxt-link>
-            </template>
-            <span v-else>{{ $t('soonLanguagePost') }}</span>
             <h1 class="elevate-cover__title">
               {{ title }}
             </h1>
@@ -96,15 +85,12 @@
           lang: this.$i18n.locale,
         },
         meta: [
-          { name: "author", content: "Marina Aisa" },
+          { name: "author", content: "Michael Paulukonis" },
           { name: "description", property: "og:description", content: this.description, hid: "description" },
           { property: "og:title", content: this.pageTitle },
           { property: "og:image", content: this.ogImage },
           { name: "twitter:description", content: this.description },
           { name: "twitter:image", content: this.ogImage }
-        ],
-        link: [
-          this.hreflang
         ]
       };
     },
@@ -118,23 +104,8 @@
         return `${process.env.baseUrl}/images/blog/${this.id}/${this.image.og}`;
       },
       pageTitle () {
-        return this.title + ' – Michael Paulukoni';
+        return this.title + ' – Michael Paulukonis';
       },
-      showLocales () {
-        return this.$i18n.locales.filter(locale => locale.code !== this.$i18n.locale)
-      },
-      hreflang () {
-        if (!this.trans) {
-          return ''
-        }
-        return {
-          hid: 'alternate-hreflang-' + this.showLocales[0].iso,
-          rel: 'alternate',
-          href: `${process.env.baseUrl + (this.showLocales[0].code === 'en' ? '' : '/es')}/blog/${this.trans}`,
-          hreflang: this.showLocales[0].code
-        }
-      },
-
       extraComponentLoader () {
         if (!this.extraComponent) {
           return null
