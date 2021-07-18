@@ -148,7 +148,6 @@ module.exports = {
     routes: [
       '/es', '404'
     ]
-    .concat(getPaths('es', 'blog'))
     .concat(getPaths('en', 'blog'))
   }
 }
