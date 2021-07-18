@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{115:function(n,t,e){"use strict";e.r(t),t.default={credits:'Based on the open-source template by <a target="_blank" href="https://github.com/marinaaisa/nuxt-markdown-blog-starter" class="ani"><span>Marina Aisa</span></a>.'}}}]);
