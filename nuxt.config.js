@@ -21,10 +21,16 @@ const md = new MarkdownIt({
 md.use(mip)
 
 const productionUrl = {
-  en: "/en",
-  es: "/es"
-};
-const baseUrl = 'https://marinaaisa.com';
+  en: '/en'
+}
+const baseUrl = 'https://michaelpaulukonis.github.io'
+
+// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/'
+  }
+} : {}
 
 module.exports = {
   env: {
@@ -32,7 +38,7 @@ module.exports = {
     productionUrl
   },
   head: {
-    title: 'Marina Aisa | Product Designer & Front-end Developer',
+    title: 'Michael Paulukonis| Software Architect and Code Artist',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' },
