@@ -19,9 +19,8 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "generate": "nuxt generate",
     "analyze": "nuxt build --analyze",
-    "generate:personal": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "generate": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "clean": "rm -rf dist",
     "deploy": "gh-pages -t -d dist -b master",
     "bump": "npm version patch",
