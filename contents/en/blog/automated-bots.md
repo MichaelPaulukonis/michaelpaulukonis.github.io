@@ -44,7 +44,7 @@ Bots that use Tracery/[Cheap Bots Done Quick](http://cheapbotsdonequick.com/) ma
 - [Houses of the Holy](https://twitter.com/FellowshipBot) - church generator
 - [Wine Critic Bot](https://twitter.com/WinecriticB) - vineyards, wines and reviews
 - <https://twitter.com/brewmasterbot> - craft beers
-- <https://leanstooneside.tumblr.com/> - aka '''Lis(z)t Mania'''
+- <https://leanstooneside.tumblr.com/> - aka *Lis(z)t Mania*
 - <https://twitter.com/WhitespaceBot>
 - <https://twitter.com/BadKnockKnocks>
 - <https://twitter.com/atticPetalsBot>
