@@ -43,7 +43,8 @@ export default {
       { url: 'https://github.com/michaelpaulukonis', name: 'github' },
       { url: 'https://www.linkedin.com/in/michaelpaulukonis/', name: 'linkedin' },
       { url: 'https://www.instagram.com/michaelpaulukonis', name: 'instagram' },
-      { url: 'https://bsky.app/profile/xradiographer.bsky.social', name: 'Bluesky' }
+      { url: 'https://bsky.app/profile/xradiographer.bsky.social', name: 'Bluesky' },
+      { url: 'https://docs.google.com/document/d/176IjNI0Dzk8jc9pCvFWTU98Zx_DfivRHgJpA-jgegsM/edit?usp=sharing', name: 'resume' }
     ]);
 
     const websites = ref([
