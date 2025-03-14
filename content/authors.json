@@ -1,0 +1,13 @@
+{
+    "Sample Author": {
+        "@context": "http://www.schema.org",
+        "@type": "Person",
+        "@id": "https://michaelpaulukonis.github.io/",
+        "name": "Michael Paulukonis",
+        "alternateName": "Michael Paulukonis",
+        "nationality": "American",
+        "gender": "male",
+        "jobTitle": "Senior Software Engineer, full-stack dev",
+        "url": "https://michaelpaulukonis.github.io/"
+    }
+}
