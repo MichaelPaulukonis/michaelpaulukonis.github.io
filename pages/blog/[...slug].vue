@@ -4,7 +4,7 @@
             <template v-slot="{ doc }">
                 <Section id="blog-title" type="header">
                     <div
-                        class="border-t-2 pt-8 border-typography_primary flex flex-col md:flex-row items-center md:justify-between md:text-right mb-12 md:mb-8"
+                        class="pt-8 border-typography_primary flex flex-col md:flex-row items-center md:justify-between md:text-right mb-12 md:mb-8"
                     >
                         <!-- Breadcrumbs -->
                         <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="blog-breadcrumb">
@@ -42,17 +42,8 @@
                     </h1>
                     <p class="blog-post-text mb-8 md:w-8/12 md:text-lg md:leading-lg text-center md:text-left">{{ doc.excerpt }}</p>
                     <div
-                        class="border-b-2 pb-8 border-typography_primary dark:border-typography_primary_dark flex flex-col md:flex-row items-center md:justify-between mt-12 md:mt-4"
+                        class="pb-8 border-typography_primary dark:border-typography_primary_dark flex flex-col md:flex-row items-center md:justify-between mt-12 md:mt-4"
                     >
-                        <!-- Author -->
-                        <div class="flex flex-row items-center justify-center">
-                            <span class="blog-post-text text-lg leading-lg font-light"
-                                >By
-                                <a class="hover:underline italic" :href="doc.authorUrl" target="_blank" rel="noopener noreferrer">{{
-                                    doc.author
-                                }}</a></span
-                            >
-                        </div>
                         <!-- Social Share -->
                         <div class="mt-6 md:mt-0">
                             <NavShareIcons :headline="doc.headline" :excerpt="doc.excerpt" :path="doc._path + '/'" />
@@ -180,7 +171,7 @@ useHead({
     top: calc(theme('spacing.nav') + 0.25rem);
 }
 .blog-aside-wrapper {
-    @apply flex flex-col border-t-2 border-b-2 border-typography_primary py-4;
+    @apply flex flex-col border-typography_primary py-4;
 }
 .blog-post-text {
     @apply text-typography_primary;

@@ -1,6 +1,6 @@
 <template>
     <Section id="blog" class="text-typography_primary">
-        <div class="border-t-2 pt-8 border-typography_primary flex flex-col md:flex-row items-center md:justify-between md:text-right mb-6 md:mb-8">
+        <div class="pt-8 border-typography_primary flex flex-col md:flex-row items-center md:justify-between md:text-right mb-6 md:mb-8">
             <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="blog-breadcrumb">
                 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="/"> <span itemprop="name">Home</span></a>
@@ -17,6 +17,6 @@
         <p class="mb-3 md:w-8/12 md:text-lg md:leading-lg text-center md:text-left">
             So, this will be a blog, of sorts. Again. Maybe. I feel confidently ambivalent about this, I think.
         </p>
-        <div class="border-t-2 mt-8 border-typography_primary flex flex-col md:flex-row items-center md:justify-between md:text-right"></div>
+        <div class="mt-8 border-typography_primary flex flex-col md:flex-row items-center md:justify-between md:text-right"></div>
     </Section>
 </template>
