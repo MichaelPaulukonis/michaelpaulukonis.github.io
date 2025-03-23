@@ -7,7 +7,7 @@
             {{ languageText }}
         </span>
         <slot />
-        <div class="bottom-container opacity-100 group-hover:md:opacity-100 md:opacity-0 transition-opacity duration-150">
+        <div class="bottom-container opacity-100 group-hover:md--opacity-100 md--opacity-0 transition-opacity duration-150">
             <div class="copy-container">
                 <button
                     @click="copy(code)"
