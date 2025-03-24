@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'nuxt-content-assets', '@nuxt/content'],
-  css: ['/assets/css/main.css'],
+  // css: ['/assets/css/main.css'],
   ssr: true,
 
   experimental: {

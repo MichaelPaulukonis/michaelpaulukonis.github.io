@@ -16,3 +16,6 @@ I may have to rethink my use of pug. Otherwise, I do think it is much easier to 
 Once I changed the uses of `md:` to `md--` so much functional appearances returned!!!!
 
 Still some more things I would prefer.
+
+Other main issue - font-size: 75% for `html` in `main.css` - this is straight from the other styling
+I want to get rid of it for everything EXCEPT the purple layout.

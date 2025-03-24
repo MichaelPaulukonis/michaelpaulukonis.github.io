@@ -31,13 +31,11 @@
 <script>
 import { ref } from 'vue';
 
+definePageMeta({
+    layout: 'purple'
+  })
+
 export default {
-  mounted() {
-    document.body.classList.add('index-page');
-  },
-  unmounted() {
-    document.body.classList.remove('index-page');
-  },
   setup() {
     const accounts = ref([
       { url: 'https://github.com/michaelpaulukonis', name: 'github' },

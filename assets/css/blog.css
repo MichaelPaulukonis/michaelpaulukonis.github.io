@@ -1,5 +1,9 @@
 /* Blog Headings */
 
+.blog-content {
+  @apply px-4;
+}
+
 .blog-content h1 {
   @apply mt-16;
 }
@@ -36,6 +40,7 @@
 .blog-content ol,
 .blog-content ul {
   @apply text-lg leading-h5;
+
 }
 
 /* Blog Breadcrumbs */

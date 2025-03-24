@@ -57,7 +57,7 @@
               class="italic absolute -top-8 text-sm leading-sm font-light text-typography_primary/75 dark:text-typography_primary_dark/75">(Updated:
               {{ $formatDate(doc.dateUpdated) }})</span>
             <!-- Blog content -->
-            <ContentRenderer :value="doc" class="blog-content blog-post-text" />
+            <ContentRenderer :value="doc" class="bg-gray-300 blog-content blog-post-text" />
           </article>
           <aside class="col-span-full md--col-span-3 blog-aside h-fit">
             <!-- Mobile Table of Content -->

@@ -23,7 +23,7 @@ tags:
 NOTE: this is quite out-of-date and is a WIP
 
 
-![image](media/publications.thumb.png)
+![fragment of Backslash Lit #4](/media/publications.thumb.png)
 
 ## Places I can or have been found
 
