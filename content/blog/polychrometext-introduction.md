@@ -1,8 +1,7 @@
 ---
 title: Introducing PolychromeText
-description: 'An browser-based text-drawing program because I was jealous of Jackson Pollock and Mark Rothko'
+description: A browser-based text-drawing program because I was jealous of Jackson Pollock and Mark Rothko
 headline: PolychromeText
-excerpt: An browser-based text-drawing program because I was jealous of Jackson Pollock and Mark Rothko
 date: '2019-09-14T12:00:00'
 dateUpdated: ''
 author: 'Michael Paulukonis'

@@ -33,13 +33,13 @@
             class="blog-post-text font-bold mb-4 md--mb-6 text-h3 leading-h3 md--text-h1 md--leading-h1 text-center md--text-left">
             {{ doc.headline }}
           </h1>
-          <p class="blog-post-text mb-8 md--w-8/12 md--text-lg md--leading-lg text-center md--text-left">{{ doc.excerpt }}
+          <p class="blog-post-text mb-8 md--w-8/12 md--text-lg md--leading-lg text-center md--text-left">{{ doc.description }}
           </p>
           <div
             class="pb-8 border-typography_primary dark--border-typography_primary_dark flex flex-col md--flex-row items-center md--justify-between mt-12 md--mt-4">
             <!-- Social Share -->
             <div class="mt-6 md--mt-0">
-              <NavShareIcons :headline="doc.headline" :excerpt="doc.excerpt" :path="doc._path + '/'" />
+              <NavShareIcons :headline="doc.headline" :excerpt="doc.description" :path="doc._path + '/'" />
             </div>
           </div>
         </Section>
@@ -91,7 +91,7 @@ const { data, error } = await useAsyncData(`content-${cleanPath}`, async () => {
   let article = queryContent('/blog').where({ _path: cleanPath }).findOne();
   // get the surround information,
   // which is an array of documeents that come before and after the current document
-  let surround = queryContent('/blog').sort({ date: -1 }).only(['_path', 'headline', 'excerpt']).findSurround(cleanPath, { before: 1, after: 1 });
+  let surround = queryContent('/blog').sort({ date: -1 }).only(['_path', 'headline', 'description', 'excerpt']).findSurround(cleanPath, { before: 1, after: 1 });
   return {
     article: await article,
     surround: await surround

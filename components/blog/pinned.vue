@@ -3,9 +3,9 @@
     li.relative.rounded-md.border-typography_primary.hover--border-brand_primary.group(v-for="article in data" :key="article._path")
         NuxtLink.pr-4.block.relative(:to="article._path + '/'")
             .wrapper
-                img(:src="article.socialImage.src" :alt="article.excerpt" class="rounded-md")
+                img(:src="article.socialImage.src" :alt="article.description" class="rounded-md")
                 .pinned__title.font-serif.text-h3.leading-h3.font-semibold.group-hover--text-brand_primary {{ article.headline }}
-                .pinned__excerpt {{ article.excerpt }}
+                .pinned__description {{ article.description }}
 </template>
 
 <script setup>
@@ -25,7 +25,7 @@ const props = defineProps({
     color: #fcfcfc;
 }
 
-.pinned__excerpt {
+.pinned__description {
     padding: 2px 8px;
     background: #38ef7d;
     color: #000;

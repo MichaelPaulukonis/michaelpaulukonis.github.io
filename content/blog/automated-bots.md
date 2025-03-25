@@ -2,8 +2,6 @@
 title: Automated Art Automatons
 headline: Automated Art Automatons
 description: Notes on automated bots, mostly posting to Twitter or Tumblr
-excerpt: Notes on automated bots, mostly posting to Twitter or Tumblr
-
 date: 2019-09-14
 dateUpdated: ''
 author: Michael Paulukonis

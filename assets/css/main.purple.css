@@ -8,7 +8,7 @@
 
 /* html, body */
 html {
-  /* font-size: 75%; */
+  font-size: 75%;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   height: 100%;

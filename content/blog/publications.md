@@ -2,7 +2,6 @@
 title: Publications
 description: Places that have graced me with my presence
 headline: Publications
-excerpt: Places that have graced me with my presence
 date: 2021-07-01
 dateUpdated: ''
 author: Michael Paulukonis

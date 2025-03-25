@@ -45,7 +45,7 @@ const icons = [
         getHref: () => {
             return `https://www.linkedin.com/sharing/share-offsite/?mini=true&url=${encodedUrl}&title=${encodeURI(
                 props.headline
-            )}&summary=${encodeURI(props.excerpt)}`;
+            )}&summary=${encodeURI(props.description)}`;
         }
     },
     {

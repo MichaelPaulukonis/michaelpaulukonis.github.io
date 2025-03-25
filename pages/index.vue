@@ -20,7 +20,7 @@
   #main.pt-0-important.mt-10
     ContentQuery(
       path="/blog"
-      :only="['headline', 'excerpt', 'date', 'tags', '_path', 'image', 'socialImage']"
+      :only="['headline', 'excerpt', 'description', 'date', 'tags', '_path', 'image', 'socialImage']"
       :where="{ 'tags': { $contains: 'pinned' } }"
       :sort="{ date: -1 }"
       v-slot="{ data }"

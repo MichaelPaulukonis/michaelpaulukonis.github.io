@@ -4,7 +4,7 @@ main
   Section#main.pt-0-important
     ContentQuery(
       path="/blog"
-      :only="['headline', 'excerpt', 'date', 'tags', '_path', 'image']"
+      :only="['headline', 'excerpt', 'description', 'date', 'tags', '_path', 'image']"
       :sort="{ date: -1 }"
       :limit="blogCountLimit"
       v-slot="{ data }"

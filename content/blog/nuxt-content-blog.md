@@ -1,8 +1,7 @@
 ---
 title: A Nuxt blog using Content
-description: 'A Nuxt blog using Content'
+description: A Nuxt blog using Content
 headline: A Nuxt blog using Content
-excerpt: A Nuxt blog using Content
 date: '2025-03-22T12:00:00'
 dateUpdated: ''
 author: 'Michael Paulukonis'

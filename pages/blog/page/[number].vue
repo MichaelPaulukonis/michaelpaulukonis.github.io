@@ -3,7 +3,7 @@
         <!-- Query for the given blog page number -->
         <ContentQuery
             path="/blog"
-            :only="['headline', 'excerpt', 'date', 'tags', '_path', 'image']"
+            :only="['headline', 'excerpt', 'description', 'date', 'tags', '_path', 'image']"
             :sort="{
                 date: -1
             }"

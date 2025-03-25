@@ -11,7 +11,7 @@
                     >
                         {{ other.headline }}
                     </NuxtLink>
-                    <p class="!no-underline md--hidden text-sm leading-sm md--text-xs md--leading-xs mt-1">{{ other.excerpt }}</p>
+                    <p class="!no-underline md--hidden text-sm leading-sm md--text-xs md--leading-xs mt-1">{{ other.description }}</p>
                 </li>
             </template>
         </ul>
