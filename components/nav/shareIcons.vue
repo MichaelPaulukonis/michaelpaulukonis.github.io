@@ -5,7 +5,7 @@
                 :href="icon.getHref()"
                 target="_blank"
                 rel="noopener noreferer"
-                class="hover:scale-125 mx-2 text-typography_primary hover:text-brand_primary transition-transform duration-100"
+                class="hover--scale-125 mx-2 text-typography_primary hover--text-brand_primary transition-transform duration-100"
             >
                 <component :is="icon.icon" :alt="icon.alt" :aria-label="icon.alt" class="w-6 h-6" width="24" height="24"/>
             </a>

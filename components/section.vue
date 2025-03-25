@@ -1,7 +1,7 @@
 <template>
     <component :is="props.type"
         :class="[
-            'px-section_x_sm py-section_y_sm sm:px-section_x sm:py-section_y relative',
+            'px-section_x_sm py-section_y_sm sm--px-section_x sm--py-section_y relative',
             props.fullHeight ? 'full-height' : '',
             props.forcedHeight ? 'full-height--forced' : ''
         ]"
@@ -39,7 +39,7 @@ const props = defineProps({
     height: calc(100vh - theme('spacing.nav'));
 }
 @screen md {
-    .full-height:not(.full-height--forced) {
+    .full-height--not(.full-height--forced) {
         height: calc(100vh - theme('spacing.nav'));
     }
 }

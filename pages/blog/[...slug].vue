@@ -24,7 +24,7 @@
               </li>
             </ol>
             <!-- Publish date -->
-            <span class="font-light text-typography_primary/75 dark:text-typography_primary_dark/75 mt-2 md--mt-0">{{
+            <span class="font-light text-typography_primary/75 dark--text-typography_primary_dark/75 mt-2 md--mt-0">{{
               $formatDate(doc.date)
             }}</span>
           </div>
@@ -36,7 +36,7 @@
           <p class="blog-post-text mb-8 md--w-8/12 md--text-lg md--leading-lg text-center md--text-left">{{ doc.excerpt }}
           </p>
           <div
-            class="pb-8 border-typography_primary dark:border-typography_primary_dark flex flex-col md--flex-row items-center md--justify-between mt-12 md--mt-4">
+            class="pb-8 border-typography_primary dark--border-typography_primary_dark flex flex-col md--flex-row items-center md--justify-between mt-12 md--mt-4">
             <!-- Social Share -->
             <div class="mt-6 md--mt-0">
               <NavShareIcons :headline="doc.headline" :excerpt="doc.excerpt" :path="doc._path + '/'" />
@@ -44,7 +44,7 @@
           </div>
         </Section>
         <!-- Content -->
-        <Section id="main" class="!pt-0 relative grid grid-cols-10 gap-8 lg:gap-12">
+        <Section id="main" class="!pt-0 relative grid grid-cols-10 gap-8 lg--gap-12">
           <!-- Table of Contents -->
           <aside class="col-span-full md--col-span-3 md--hidden">
             <div class="blog-post-text blog-aside-wrapper mb-2">
@@ -54,7 +54,7 @@
           <article class="prose col-span-full md--col-span-7 relative">
             <!-- Update date -->
             <span v-show="doc.dateUpdated"
-              class="italic absolute -top-8 text-sm leading-sm font-light text-typography_primary/75 dark:text-typography_primary_dark/75">(Updated:
+              class="italic absolute -top-8 text-sm leading-sm font-light text-typography_primary/75 dark--text-typography_primary_dark/75">(Updated:
               {{ $formatDate(doc.dateUpdated) }})</span>
             <!-- Blog content -->
             <ContentRenderer :value="doc" class="bg-gray-300 blog-content blog-post-text" />
@@ -135,15 +135,15 @@ useHead({
     { name: 'description', content: data.value?.article?.description },
     { property: 'article:published_time', content: data.value?.article?.date.split('T')[0] },
     // OG
-    { hid: 'og:title', property: 'og:title', content: data.value?.article?.headline },
-    { hid: 'og:url', property: 'og:url', content: canonicalPath },
-    { hid: 'og:description', property: 'og:description', content: data.value?.article?.description },
-    { hid: 'og:image', name: 'image', property: 'og:image', content: image },
-    { hid: 'og:type', property: 'og:type', content: 'Article' },
-    { hid: 'og:image:type', property: 'og:image:type', content: `image/${data.value?.article?.socialImage.mime}` },
-    { hid: 'og:image:width', property: 'og:image:width', content: data.value?.article?.socialImage.width || 190 },
-    { hid: 'og:image:height', property: 'og:image:height', content: data.value?.article?.socialImage.height || 190 },
-    { hid: 'og:image:alt', property: 'og:image:alt', content: data.value?.article?.socialImage.alt },
+    { hid: 'og--title', property: 'og--title', content: data.value?.article?.headline },
+    { hid: 'og--url', property: 'og--url', content: canonicalPath },
+    { hid: 'og--description', property: 'og--description', content: data.value?.article?.description },
+    { hid: 'og--image', name: 'image', property: 'og--image', content: image },
+    { hid: 'og--type', property: 'og--type', content: 'Article' },
+    { hid: 'og--image--type', property: 'og--image--type', content: `image/${data.value?.article?.socialImage.mime}` },
+    { hid: 'og--image--width', property: 'og--image--width', content: data.value?.article?.socialImage.width || 190 },
+    { hid: 'og--image--height', property: 'og--image--height', content: data.value?.article?.socialImage.height || 190 },
+    { hid: 'og--image--alt', property: 'og--image--alt', content: data.value?.article?.socialImage.alt },
   ],
   link: [
     {

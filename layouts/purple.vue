@@ -10,10 +10,6 @@
 <style lang="css">
 @import '~/assets/css/main.purple.css';
 
-/* body {
-  @apply bg-gradient-to-br from-fuchsia-700 via-rose-400 to-amber-400 bg-fixed h-full;
-} */
-
 .container {
   @apply max-w-7xl mx-auto;
 }

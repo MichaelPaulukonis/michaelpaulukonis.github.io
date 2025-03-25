@@ -6,8 +6,8 @@
         </header>
         <ul v-if="links" :class="[isVisible ? 'block' : 'hidden']">
             <!-- render each link with depth class -->
-            <li v-for="link of flattenLinks(links)" :key="link.id" :class="`toc-link_${link.depth} first:mt-0 mt-2 md--mt-1`">
-                <a :href="`#${link.id}`" class="hover:underline hover:text-brand_primary">
+            <li v-for="link of flattenLinks(links)" :key="link.id" :class="`toc-link_${link.depth} first--mt-0 mt-2 md--mt-1`">
+                <a :href="`#${link.id}`" class="hover--underline hover--text-brand_primary">
                     {{ link.text }}
                 </a>
             </li>

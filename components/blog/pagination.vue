@@ -70,7 +70,7 @@ const prevLink = computed(() => {
 .pagination-item {
     @apply rounded-md border border-typography_primary px-2 py-1 mx-1 w-8 text-center h-full;
 }
-.pagination-item:not(.active):hover {
+.pagination-item--not(.active):hover {
     @apply bg-brand_primary/25;
 }
 .pagination-extra {

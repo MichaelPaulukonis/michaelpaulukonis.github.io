@@ -7,6 +7,13 @@ I want to go back to the original CSS (which wasn't awful, just not what I wante
 
 It looks like things were deleted or renamed. I was using some AI to generate the CSS, and I have learned to mistrust even more since it did this.
 
+## I actually haven't backed out fully.
+
+Think I'll publish something intermediate, then try bankruptcy again
+
+Main page doesn't work without font-size: 75%, but the rest of the blog doesn't look good with that there. And dynamically setting a class on the body causes awful blinking and resizing ugh.
+
+
 ## main culprit
 
 I changed the default tailwind separator to be a double-dash - `--` - since `pug` does not play nicely with Tailwind.
@@ -19,3 +26,32 @@ Still some more things I would prefer.
 
 Other main issue - font-size: 75% for `html` in `main.css` - this is straight from the other styling
 I want to get rid of it for everything EXCEPT the purple layout.
+
+
+Lots of uses of `foo:` (foo-colon) classname prefix in other files. Replacing.
+There may also be problems with `components/nav/scrollTopIcon.vue` for other Tailwind things
+
+lg:
+og:
+image:
+
+## changed files
+
+```
+assets/css/blog.css
+assets/css/main.css
+assets/css/main.purple.css
+branch.notes.md
+components/blog/hero.vue
+components/blog/list.vue
+components/blog/relatedArticles.vue
+components/blog/tableOfContents.vue
+components/content/ProseCode.vue
+content/blog/publications.md
+layouts/default.vue
+layouts/purple.vue
+nuxt.config.ts
+pages/blog/[...slug].vue
+pages/blog/index.vue
+pages/index.vue
+```

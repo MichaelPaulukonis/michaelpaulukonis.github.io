@@ -2,6 +2,11 @@
 
 .blog-content {
   @apply px-4;
+  @apply last--pb-4;
+}
+
+.blog-content p:first-child {
+  @apply pt-4;
 }
 
 .blog-content h1 {

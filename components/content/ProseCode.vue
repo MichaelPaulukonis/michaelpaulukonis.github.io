@@ -7,11 +7,11 @@
             {{ languageText }}
         </span>
         <slot />
-        <div class="bottom-container opacity-100 group-hover:md--opacity-100 md--opacity-0 transition-opacity duration-150">
+        <div class="bottom-container opacity-100 group-hover--md--opacity-100 md--opacity-0 transition-opacity duration-150">
             <div class="copy-container">
                 <button
                     @click="copy(code)"
-                    class="p-1 text-background border rounded-md border-background hover:border-brand_primary hover:bg-brand_primary hover:text-background"
+                    class="p-1 text-background border rounded-md border-background hover--border-brand_primary hover--bg-brand_primary hover--text-background"
                 >
                     <IconsCheck v-if="copied" class="w-5 h-5" width="20" height="20" />
                     <IconsCopy v-else class="w-5 h-5" width="20" height="20" />

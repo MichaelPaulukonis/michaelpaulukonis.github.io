@@ -8,7 +8,7 @@
 
 /* html, body */
 html {
-  font-size: 75%;
+  /* font-size: 75%; */
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   height: 100%;
@@ -77,11 +77,11 @@ body {
   margin-top: 2rem;
 }
 
-.page-index {
+.page-index.container {
+  font-size: 75%;
+}
 
-  .container {
-    font-size: 75%;
-  }
+.page-index {
 
   /* Site Links */
   .site-link:hover {
