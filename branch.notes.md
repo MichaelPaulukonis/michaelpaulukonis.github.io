@@ -62,3 +62,6 @@ pages/blog/[...slug].vue
 pages/blog/index.vue
 pages/index.vue
 ```
+
+
+git show development:assets/images/blog/watmap/_main.jpg > content/blog/media/watmap.00.png

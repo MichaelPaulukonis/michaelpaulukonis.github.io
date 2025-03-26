@@ -24,6 +24,7 @@ An introduction to PolychromeText
 
 NOTE: as of 03.2025 this needs a massive update. As does the code.
 
+![a working session of PolychromeText showing an older GUI](media/polychrometext.thumb.jpg)
 
 ## What are you talking about?
 
