@@ -1,7 +1,7 @@
 <template lang="pug">
 .page-index.container.px-4.py-8
   .bio
-    h1.text-title.leading-title.mt-8.mb-4 Michael Paulukonis
+    .text-9xl.font-black.mt-8.mb-4 Michael Paulukonis
 
   .sectionhead.mt-8.inline-block.bg-primary.text-white.leading-tight.antialiased.text-left.font-bold.p-2.text-2xl.font-serif
     | I am a full-stack developer and digital artist living in Framingham, MA
@@ -30,10 +30,6 @@
 
 <script>
 import { ref } from 'vue';
-
-definePageMeta({
-    layout: 'purple'
-  })
 
 export default {
   setup() {
@@ -69,6 +65,11 @@ export default {
         url: 'http://michaelpaulukonis.github.io/poetrygen/',
         name: 'poetry generators',
       },
+      { url: 'http://michaelpaulukonis.github.io/nova-zombie-simulator/', name: 'nova zombie simulator' },
+      { url: 'https://michaelpaulukonis.github.io/computational-collage/', name: 'computational collage' },
+      { url: 'http://michaelpaulukonis.github.io/crude-collage-painter', name: 'crude collage painter'},
+      { url: '/blog', name: 'Blog'}
+
     ]);
 
     return { accounts, websites, projects };

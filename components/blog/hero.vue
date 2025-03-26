@@ -15,8 +15,8 @@
           </li>
         </ol>
       </div>
-      <h1 class="p-3 font-bold mb-4 md--mb-6 text-h3 leading-h3 md--text-h1 md--leading-h1 text-center md--text-left">Blog
-      </h1>
+      <div class="text-9xl p-3 font-black mb-4 md--mb-6 leading-9xl md--text-9xl md--leading-9xl text-center md--text-left">An blog
+      </div>
       <p class="p-3 mb-3 md--w-8/12 md--text-lg md--leading-lg text-center md--text-left">
         So, this will be a blog, of sorts. Again. Maybe. I feel confidently ambivalent about this, I think.
       </p>

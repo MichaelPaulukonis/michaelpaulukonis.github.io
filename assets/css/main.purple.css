@@ -72,13 +72,9 @@ body {
 
 .page-index > .bio h1 {
   margin-bottom: 1rem;
-  font-size: 6rem;
+  /* font-size: 6rem; */
   line-height: 5rem;
   margin-top: 2rem;
-}
-
-.page-index.container {
-  font-size: 75%;
 }
 
 .page-index {
