@@ -1,16 +1,25 @@
 /* Blog Headings */
 
+.blog-content img {
+  max-height: 512px;
+}
+
 .blog-content {
   @apply px-4;
   @apply last--pb-4;
+  font-size: 100%;
 }
 
 .blog-content p:first-child {
   @apply pt-4;
 }
 
+.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5 {
+  @apply font-black;
+}
+
 .blog-content h1 {
-  @apply mt-16;
+  @apply mt-16 py-8 text-4xl;
 }
 
 .blog-content h2 {
@@ -45,6 +54,7 @@
 .blog-content ol,
 .blog-content ul {
   @apply text-lg leading-h5;
+  font-size: 100%
 
 }
 
@@ -85,11 +95,11 @@
 /* blog h styles */
 #blog {
   h1 {
-    @apply text-h1_sm leading-h1_sm mb-6;
+    @apply text-h1_sm leading-h1_sm mb-6 font-black;
   }
 
   h2 {
-    @apply text-h2_sm leading-h2_sm mb-4;
+    @apply text-h2_sm leading-h2_sm mb-4 font-black;
   }
 
   h3 {
