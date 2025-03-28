@@ -7,7 +7,7 @@
     | I am a full-stack developer and digital artist living in Framingham, MA
 
   ul.inline-list.list-none.m-0.p-0
-    li.inline-block.leading-none.pl-5(v-for="site in accounts")
+    li.inline-block.leading-none.pl-5(v-for="site in sites")
       a.site-link.px-2.py-1.bg-secondary.uppercase.tracking-wide.font-normal.text-sm.text-black(:href="site.url") {{ site.name }}
 
   .sectionhead.mt-8.inline-block.bg-primary.text-white.leading-tight.antialiased.text-left.font-bold.p-2.text-2xl.font-serif
@@ -33,16 +33,12 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const accounts = ref([
+    const sites = ref([
       { url: 'https://github.com/michaelpaulukonis', name: 'github' },
       { url: 'https://www.linkedin.com/in/michaelpaulukonis/', name: 'linkedin' },
       { url: 'https://www.instagram.com/michaelpaulukonis', name: 'instagram' },
       { url: 'https://bsky.app/profile/xradiographer.bsky.social', name: 'Bluesky' },
       { url: 'https://docs.google.com/document/d/176IjNI0Dzk8jc9pCvFWTU98Zx_DfivRHgJpA-jgegsM/edit?usp=sharing', name: 'resume' }
-    ]);
-
-    const websites = ref([
-      { url: 'http://michaelpaulukonis.com', name: 'michaelpaulukonis.com' },
     ]);
 
     const projects = ref([
@@ -72,7 +68,7 @@ export default {
 
     ]);
 
-    return { accounts, websites, projects };
+    return { sites, projects };
   },
 };
 </script>

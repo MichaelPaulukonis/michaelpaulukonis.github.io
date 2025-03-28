@@ -2,23 +2,23 @@
   <main class="blog-post-text">
     <ContentDoc>
       <template v-slot="{ doc }">
-        <Section id="blog-title" type="header">
-          <div class="bg-gray-300">
+        <Section id="blog-title" type="header" class="bg-gray-300">
+          <div >
             <div
-              class="border-t-2 pt-8 border-typography_primary flex flex-col md--flex-row items-center md--justify-between md--text-right mb-12 md--mb-8">
+              class="border-t-8 pt-8 border-typography_primary flex flex-col md--flex-row items-center md--justify-between md--text-right mb-12 md--mb-8">
               <!-- Breadcrumbs -->
-              <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="blog-breadcrumb p-3 bg-green-400">
+              <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="blog-breadcrumb p-3">
                 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                   <a itemprop="item" href="/"> <span itemprop="name">Home</span></a>
                   <meta itemprop="position" content="1" />
                 </li>
-                <li class="separator">/</li>
+                <li class="separator"> > </li>
                 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                   <a itemscope itemtype="https://schema.org/WebPage" itemprop="item" itemid="/blog/" href="/blog/">
                     <span itemprop="name">Blog</span></a>
                   <meta itemprop="position" content="2" />
                 </li>
-                <li class="separator">/</li>
+                <li class="separator"> > </li>
                 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                   <span itemprop="name">{{ doc.headline }}</span>
                   <meta itemprop="position" content="3" />
@@ -30,10 +30,10 @@
               }}</span>
             </div>
             <!-- Headline -->
-            <h1
-              class="pl-3 blog-post-text font-bold mb-4 md--mb-6 text-h3 leading-h3 md--text-h1 md--leading-h1 text-center md--text-left bg-violet-500">
+            <div id="headline"
+              class="">
               {{ doc.headline }}
-            </h1>
+          </div>
             <p class="pl-3 blog-post-text mb-8 md--w-8/12 md--text-lg md--leading-lg text-center md--text-left">{{ doc.description }}
             </p>
             <div

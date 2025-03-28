@@ -20,7 +20,7 @@ tags:
   - p5js
 ---
 
-An introduction to PolychromeText
+# An introduction to PolychromeText
 
 NOTE: as of 03.2025 this needs a massive update. As does the code.
 

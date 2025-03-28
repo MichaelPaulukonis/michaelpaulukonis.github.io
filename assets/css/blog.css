@@ -5,7 +5,7 @@
 }
 
 .blog-content {
-  @apply px-4;
+  @apply px-4 mt-16;
   @apply last--pb-4;
   font-size: 100%;
 }
@@ -141,4 +141,16 @@
   p {
     @apply text-base leading-base;
   }
+}
+
+#blog-title {
+
+  li :not(.separator) {
+    @apply bg-green-400 px-2 py-1 uppercase text-black;
+  }
+
+  #headline {
+    @apply bg-violet-500 px-5 p-2 text-white sectionhead inline-block text-white leading-tight antialiased text-left font-black text-6xl font-serif mb-4 md--mb-6 md--text-h1 md--leading-h1 md--text-left;
+  }
+
 }
