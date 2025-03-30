@@ -1,6 +1,7 @@
 
 @import './animations.css';
 @import './blog.css';
+@import './fonts.css';
 
 @tailwind base;
 @tailwind components;
@@ -27,54 +28,26 @@ body {
   overflow-x: hidden;
 }
 
-/* Gradient only for index.vue */
-/* body {
-  @apply bg-gradient-to-br from-fuchsia-700 via-rose-400 to-amber-400 bg-fixed h-full;
-} */
-
 /* page-index */
 
 .page-index > .sectionhead {
-  display: inline-block;
-  background-color: #7d5cff;
-  color: #fcfcfc;
-  line-height: 1.15;
-  -webkit-font-smoothing: antialiased;
-  text-align: left;
-  font-weight: 700;
-  padding: 6px;
-  font-size: 1.3em;
-  font-family: Neuton, Hoefler Text, Palatino, Baskerville, Georgia,
-    Times New Roman, serif;
+  @apply  mt-8 inline-block bg-violet-500 p-2 text-left font-serif text-h3_sm font-bold leading-tight text-white antialiased
 }
 
-.page-index > .inline-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.page-index > .inline-list ul {
+  @apply list-none m-0 p-0;
 }
 
 .page-index > .inline-list li {
-  display: inline-block;
-  line-height: 0;
-  padding-left: 20px;
+  @apply inline-block leading-none pl-5;
 }
 
 .page-index > .inline-list li a {
-  padding: 2px 8px;
-  background: #38ef7d;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 14px;
-  color: #000;
+  @apply bg-green-400 px-3 py-1 text-xl font-normal uppercase tracking-wide text-black;
 }
 
-.page-index > .bio h1 {
-  margin-bottom: 1rem;
-  /* font-size: 6rem; */
-  line-height: 5rem;
-  margin-top: 2rem;
+.page-index > .bio {
+  @apply mb-4 mt-8 text-9xl font-black;
 }
 
 .page-index {
@@ -108,16 +81,6 @@ body {
 
   #pinned-posts ul {
     padding: 0;
-  }
-
-  .bio li {
-    margin-bottom: 2em;
-  }
-
-  @media (min-width: 768px) {
-    .bio li {
-      margin-bottom: 2em;
-    }
   }
 
   blockquote {

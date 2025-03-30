@@ -13,6 +13,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Graphik', 'sans-serif'],
+        'serif': ['Tiempos Headline', 'serif']
+      },
       colors: {
         'brand_primary': '#124BCF',
         'brand_secondary': '#5eceeb',

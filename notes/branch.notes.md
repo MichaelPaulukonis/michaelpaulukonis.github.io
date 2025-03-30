@@ -1,4 +1,4 @@
-# nuxt3_css_restart branch
+## nuxt3_css_restart branch
 
 I'm declaring CSS bankruptcy
 The main index page and the pinned excerpts look great, but the blog is awful.

@@ -1,21 +1,20 @@
 <template lang="pug">
 .page-index.container.px-4.py-8
-  .bio
-    .text-9xl.font-black.mt-8.mb-4 Michael Paulukonis
+  .bio Michael Paulukonis
 
-  .sectionhead.mt-8.inline-block.bg-primary.text-white.leading-tight.antialiased.text-left.font-bold.p-2.text-2xl.font-serif
+  .sectionhead
     | I am a full-stack developer and digital artist living in Framingham, MA
 
-  ul.inline-list.list-none.m-0.p-0
-    li.inline-block.leading-none.pl-5(v-for="site in sites")
-      a.site-link.px-2.py-1.bg-secondary.uppercase.tracking-wide.font-normal.text-sm.text-black(:href="site.url") {{ site.name }}
+  ul.inline-list
+    li(v-for="site in sites")
+      a.site-link(:href="site.url") {{ site.name }}
 
-  .sectionhead.mt-8.inline-block.bg-primary.text-white.leading-tight.antialiased.text-left.font-bold.p-2.text-2xl.font-serif
+  .sectionhead
     | other web-projects
 
-  ul.inline-list.list-none.m-0.p-0
-    li.inline-block.leading-none.pl-5(v-for="project in projects" :key="project.url")
-      a.site-link.px-2.py-1.bg-secondary.uppercase.tracking-wide.font-normal.text-sm.text-black(:href="project.url") {{ project.name }}
+  ul.inline-list
+    li(v-for="project in projects" :key="project.url")
+      a.site-link(:href="project.url") {{ project.name }}
 
   #main.pt-0-important.mt-10
     ContentQuery(

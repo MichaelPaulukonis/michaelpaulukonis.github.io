@@ -1,8 +1,15 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-content-assets', '@nuxt/content'],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-content-assets', '@nuxt/content', '@nuxt/fonts'],
   // css: ['/assets/css/main.css'],
   ssr: true,
-
+  // fonts: {
+  //   fallbacks: {
+  //     'serif': ['Tiempos Headline'],
+  //     'sans-serif': ['Graphik'],
+  //     'ui-serif': ['Tiempos Headline'],
+  //     'ui-sans-serif': ['Graphik']
+  //   }
+  // },
   experimental: {
       payloadExtraction: false
   },

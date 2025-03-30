@@ -36,4 +36,5 @@ NOTE: this is quite out-of-date and is a WIP
   - [FairyTalesBot](https://procedural-generation.isaackarth.com/2016/03/29/automated-fairy-tales.html)
   - [LE Omelette D'ARTHUR](https://procedural-generation.isaackarth.com/2015/11/26/134033376013.html) 2013
 - included in [Instagram Poetry for Every Day](https://www.laurenceking.com/product/instagram-poetry-for-every-day/), Lawrence King publishing, 2020
-
+- The *Cream City Review's* non-print journal [Chesire](https://uwm.edu/creamcityreview/cheshire-michael-paulukonis/)
+- Cover of [Petrichor #26](https://petrichormag.com/petrichor-26/)
