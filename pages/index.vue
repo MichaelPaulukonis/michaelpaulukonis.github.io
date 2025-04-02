@@ -62,6 +62,7 @@ export default {
       },
       { url: 'http://michaelpaulukonis.github.io/nova-zombie-simulator/', name: 'nova zombie simulator' },
       { url: 'https://michaelpaulukonis.github.io/computational-collage/', name: 'computational collage' },
+      { url: 'https://michaelpaulukonis.github.io/dragline/', name: 'dragline' },
       { url: 'http://michaelpaulukonis.github.io/crude-collage-painter', name: 'crude collage painter'},
       { url: '/blog', name: 'Blog'}
 

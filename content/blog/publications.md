@@ -38,3 +38,4 @@ NOTE: this is quite out-of-date and is a WIP
 - included in [Instagram Poetry for Every Day](https://www.laurenceking.com/product/instagram-poetry-for-every-day/), Lawrence King publishing, 2020
 - The *Cream City Review's* non-print journal [Chesire](https://uwm.edu/creamcityreview/cheshire-michael-paulukonis/)
 - Cover of [Petrichor #26](https://petrichormag.com/petrichor-26/)
+- part of Techspressionism group show *TECHSPRESSIONISM – Digital & Beyond*, at Southampton Arts Center, 2022  <https://techspressionism.com/exhibition/southampton/michael-paulukonis/>
