@@ -35,7 +35,7 @@ tags:
 - included in [Instagram Poetry for Every Day](https://www.laurenceking.com/product/instagram-poetry-for-every-day/), Lawrence King publishing, 2020
 - The *Cream City Review's* non-print journal [Chesire](https://uwm.edu/creamcityreview/cheshire-michael-paulukonis/)
 - Cover of [Petrichor #26](https://petrichormag.com/petrichor-26/)
-- part of Techspressionism group show *TECHSPRESSIONISM – Digital & Beyond*, at Southampton Arts Center, 2022  <https://techspressionism.com/exhibition/southampton/michael-paulukonis/>
+- part of Techspressionism group show *TECHSPRESSIONISM - Digital & Beyond*, at Southampton Arts Center, 2022  <https://techspressionism.com/exhibition/southampton/michael-paulukonis/>
 - included in the [Techspressionism Pavillion](https://thewrong.org/Techspressionism) at The Wrong Biennale 2023
 - visual poems in Jim Andrews' [Sea pf Po](https://seaofpo.vispo.com?p=mp), 2024
 - included in ["Hello, Brooklyn!" // Techspressionism 2024](https://techspressionism.com/brooklyn) at the Kingsborough Art Museum, 2024
