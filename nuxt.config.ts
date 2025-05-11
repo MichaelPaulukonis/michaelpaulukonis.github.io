@@ -33,6 +33,9 @@ export default defineNuxtConfig({
   sourcemap: false,
 
   content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    },
       // https://content.nuxtjs.org/api/configuration
       highlight: {
           theme: 'github-dark',
