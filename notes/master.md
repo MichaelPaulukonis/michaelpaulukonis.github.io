@@ -4,9 +4,11 @@
 This project is a personal website and blog platform built using modern web technologies. It serves as both a portfolio and a content publishing platform, allowing for easy creation and management of various types of content including blog posts, project showcases, and personal information.
 
 ## Technology Stack
-- **Framework**: Nuxt 3 - A Vue.js framework that provides server-side rendering capabilities and an improved development experience
+- **Framework**: Nuxt 2 - A Vue.js framework that provides server-side rendering capabilities and an improved development experience
+  - TODO: Migrate to Nuxt 3
 - **Content Management**: Nuxt Content v3 - A document-driven CMS for Nuxt that allows writing content in Markdown
-- **Styling**: CSS/SCSS for custom styling
+- **Styling**: CSS/SCSS for custom styling, leaning on Tailwind@6.13.2
+- **Template Engine** pug - A template engine for Node.js that allows for cleaner HTML syntax
 - **Deployment**: GitHub Pages - Simple hosting directly from the repository
 - **Version Control**: Git/GitHub
 
