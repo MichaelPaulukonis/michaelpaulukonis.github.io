@@ -64,6 +64,7 @@ export default {
       { url: 'https://michaelpaulukonis.github.io/computational-collage/', name: 'computational collage' },
       { url: 'https://michaelpaulukonis.github.io/dragline/', name: 'dragline' },
       { url: 'http://michaelpaulukonis.github.io/crude-collage-painter', name: 'crude collage painter'},
+      { url: 'https://v0-genzify.vercel.app/', name: 'genzify' },
       { url: '/blog', name: 'Blog'},
       { url: 'http://michaelpaulukonis.github.io/sketches/', name: 'web sketches' },
 
