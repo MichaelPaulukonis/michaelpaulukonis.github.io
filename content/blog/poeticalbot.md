@@ -77,4 +77,4 @@ See the code in inaction at <https://github.com/MichaelPaulukonis/textgen-monore
 
 ## footnotes
 
-\* Pontypool: have you seen the [movie](https://en.wikipedia.org/wiki/Pontypool_(film)) or read the [book](https://en.wikipedia.org/wiki/Pontypool_Changes_Everything)? I have, and I have not. 
+\* Pontypool: have you seen the [movie](https://en.wikipedia.org/wiki/Pontypool_(film)) or read the [book](https://en.wikipedia.org/wiki/Pontypool_Changes_Everything)? I have, and I have not.
