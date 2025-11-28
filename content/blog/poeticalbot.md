@@ -25,6 +25,8 @@ tags:
   - pinned
 ---
 
+# Poeticalbot "writes" poetically
+
 <https://github.com/MichaelPaulukonis/PoeticalBot>
 
 After four years of silence, [PoeticalBot](https://poeticalbot.tumblr.com/) is posting hourly again. The experimental poetry generator I built for 2016's NaPoGenMo has been resurrected from its Heroku grave and now lives on AWS.
@@ -59,7 +61,6 @@ AND - it is posting hourly again, after all this time!
 
 ![poeticalbot posts with a long time gap](media/poeticalbot_alive_cropped.png)
 
-
 ## avert your eyes
 
 Looking at code I wrote nine years ago is... distressing. I don't want to meet the person who wrote this unless they've learned a lot since then. But here's the thing - it only stopped working because the host stopped running (for free). The original design was solid enough that revival only took a weekend, and the bot is posting again after years in stasis.
@@ -67,7 +68,6 @@ Looking at code I wrote nine years ago is... distressing. I don't want to meet t
 Hopefully, the resurrection is just step one. Now I can apply what I've learned since 2016, experiment with new generation strategies, add proper logging beyond CloudWatch basics, and maybe bring back those input parameters for themed content.
 
 The ugly code gets to live another day. Sometimes that's all a project needs.
-
 
 ## where to buy it
 

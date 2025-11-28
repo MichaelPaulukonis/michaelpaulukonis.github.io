@@ -35,10 +35,6 @@ const props = defineProps({
         type: Number,
         required: true
     },
-    nextPage: {
-        type: Boolean,
-        required: true
-    },
     baseUrl: {
         type: String,
         required: true

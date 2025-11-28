@@ -21,11 +21,10 @@
                     >
                         <template v-slot="{ data }">
                             <BlogPagination
-                                v-if="getPageLimit(data.length) > 1"
+                                v-if="getPageLimit() > 1"
                                 class="mt-8"
                                 :currentPage="getPageNumber()"
-                                :totalPages="getPageLimit(data.length)"
-                                :nextPage="getPageNumber() < getPageLimit(data.length)"
+                                :totalPages="getPageLimit()"
                                 baseUrl="/blog/"
                                 pageUrl="/blog/page/"
                             />
@@ -49,28 +48,25 @@
 </template>
 
 <script setup>
-// Fetching data
-const { path, params } = useRoute();
+import { useAsyncData, useRoute, useRouter } from '#imports';
 const blogCountLimit = 6;
-
-const getPageLimit = (totalPosts) => {
-    return Math.ceil(totalPosts / blogCountLimit);
-};
-
-const getPageNumber = () => {
-    return Number(params.number);
-};
-
-// Attempt to get the number
+const route = useRoute();
 const router = useRouter();
-let pageNo;
-try {
-    pageNo = getPageNumber();
-    if (isNaN(pageNo) || pageNo <= 0) {
-        router.replace('/blog/');
-    }
-} catch (err) {
-    console.error(err);
-    router.replace('/blog/');
+
+const pageNo = parseInt(route.params.number, 10) || 1;
+
+// Get total posts at build time
+const { data: allPosts } = await useAsyncData('allPosts', () =>
+  queryContent('/blog').only(['headline']).sort({ date: -1 }).find()
+);
+const totalPosts = allPosts.value.length;
+const totalPages = Math.max(1, Math.ceil(totalPosts / blogCountLimit));
+
+// Guard: redirect if pageNo is out of bounds
+if (pageNo < 1 || pageNo > totalPages) {
+  router.replace('/blog/');
 }
+
+const getPageLimit = () => totalPages;
+const getPageNumber = () => pageNo;
 </script>
