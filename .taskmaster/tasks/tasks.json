@@ -1,0 +1,22 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Upgrade to NuxtContent v3",
+        "description": "Upgrade the project from NuxtContent v2 to v3, updating all dependencies and making necessary code changes to ensure compatibility with the new version.",
+        "details": "1. Backup the current project state before beginning the upgrade.\n\n2. Update the package.json dependencies:\n   - Update @nuxt/content from v2.x to v3.x\n   - Check for any related packages that need updates\n\n3. Install the updated dependencies:\n   ```bash\n   npm install @nuxt/content@3.x.x\n   # or\n   yarn add @nuxt/content@3.x.x\n   ```\n\n4. Update the nuxt.config.js/ts file to accommodate v3 configuration changes:\n   - Review the content module configuration\n   - Update any deprecated options\n   - Add any new required options\n\n5. Update content directory structure if necessary (check v3 documentation for any structural changes).\n\n6. Refactor API usage:\n   - Update any imports if the import paths have changed\n   - Update method calls that have been renamed or modified\n   - Replace any deprecated features with their v3 equivalents\n\n7. Update content query syntax:\n   - v3 might have different query methods or parameters\n   - Refactor all content fetching code to use the new syntax\n\n8. Check and update any content rendering components:\n   - Update component props if they've changed\n   - Ensure markdown rendering still works as expected\n\n9. Look for breaking changes in the v3 documentation and address each one systematically.\n\n10. Update any custom plugins or middleware that interact with the content module.\n\n11. Documentation updates:\n    - Update any internal documentation about content usage\n    - Add notes about the upgrade for other developers",
+        "testStrategy": "1. Verify installation and build:\n   - Ensure the project builds without errors\n   - Check that development server runs correctly\n   - Verify production build completes successfully\n\n2. Content rendering tests:\n   - Verify all existing content pages load correctly\n   - Check that markdown formatting renders properly\n   - Test code blocks, tables, and other special content elements\n   - Ensure images and other media still display properly\n\n3. Content API tests:\n   - Test all content queries to ensure they return expected results\n   - Verify pagination works correctly if used\n   - Check that filtering and sorting function properly\n\n4. Performance testing:\n   - Compare load times before and after the upgrade\n   - Check for any significant increases in bundle size\n   - Monitor memory usage during content operations\n\n5. Cross-browser testing:\n   - Verify content displays correctly in all supported browsers\n   - Check for any browser-specific issues with the new version\n\n6. Regression testing:\n   - Create a checklist of all content-related features\n   - Systematically test each feature to ensure it still works\n\n7. SEO verification:\n   - Check that meta tags are still generated correctly\n   - Verify that content is properly indexed in search preview tools\n\n8. Create automated tests for critical content functionality to prevent future regressions.",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-11-28T21:55:36.250Z",
+      "description": "Default tasks context",
+      "updated": "2025-11-28T21:56:21.001Z"
+    }
+  }
+}
