@@ -1,7 +1,88 @@
+<script setup>
+const { $formatDate } = useNuxtApp();
+const route = useRoute();
+const cleanPath = route.path.replace(/\/+$/, '') || '/';
+
+const { data, error } = await useAsyncData(`content-${cleanPath}`, async () => {
+  const [article, surround] = await Promise.all([
+    queryCollection('blog').path(cleanPath).first(),
+    queryCollectionItemSurroundings('blog', cleanPath, {
+      fields: ['headline', 'description', 'excerpt']
+    })
+  ]);
+  return { article, surround };
+});
+
+if (!data.value?.article && !error.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
+}
+
+const doc = computed(() => data.value?.article);
+
+// Get the authors
+const { data: authorData } = await useAsyncData('authors', () => queryCollection('authors').first());
+
+// Set the meta
+const baseUrl = 'https://michaelpaulukonis.github.io';
+const canonicalPath = baseUrl + (route.path + '/').replace(/\/+$/, '/');
+const image = baseUrl + (doc.value?.socialImage?.src ? (doc.value.socialImage.src.startsWith('/') ? doc.value.socialImage.src : '/' + doc.value.socialImage.src) : '/sample.webp');
+
+// JSON+LD
+const jsonScripts = computed(() => {
+  if (!doc.value) return [];
+  return [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://michaelpaulukonis.github.io/'
+        },
+        url: canonicalPath,
+        image: image,
+        headline: doc.value.headline,
+        abstract: doc.value.excerpt,
+        datePublished: doc.value.date,
+        dateModified: doc.value.dateUpdated || doc.value.date,
+        author: authorData.value ? authorData.value[doc.value.author] : undefined,
+        publisher: authorData.value ? authorData.value['Gonzalo Hirsch'] : undefined
+      })
+    }
+  ];
+});
+
+useHead({
+  title: computed(() => doc.value?.title),
+  meta: [
+    { name: 'author', content: computed(() => doc.value?.author) },
+    { name: 'description', content: computed(() => doc.value?.description) },
+    { property: 'article:published_time', content: computed(() => doc.value?.date?.split('T')[0]) },
+    // OG
+    { hid: 'og--title', property: 'og--title', content: computed(() => doc.value?.headline) },
+    { hid: 'og--url', property: 'og--url', content: canonicalPath },
+    { hid: 'og--description', property: 'og--description', content: computed(() => doc.value?.description) },
+    { hid: 'og--image', name: 'image', property: 'og--image', content: image },
+    { hid: 'og--type', property: 'og--type', content: 'Article' },
+    { hid: 'og--image--type', property: 'og--image--type', content: computed(() => doc.value?.socialImage ? `image/${doc.value.socialImage.mime}` : undefined) },
+    { hid: 'og--image--width', property: 'og--image--width', content: computed(() => doc.value?.socialImage?.width || 190) },
+    { hid: 'og--image--height', property: 'og--image--height', content: computed(() => doc.value?.socialImage?.height || 190) },
+    { hid: 'og--image--alt', property: 'og--image--alt', content: computed(() => doc.value?.socialImage?.alt) },
+  ],
+  link: [
+    {
+      hid: 'canonical',
+      rel: 'canonical',
+      href: canonicalPath
+    }
+  ],
+  script: jsonScripts
+});
+</script>
+
 <template>
-  <main class="blog-post-text">
-    <ContentDoc>
-      <template v-slot="{ doc }">
+  <main class="blog-post-text" v-if="doc">
         <Section id="blog-title" type="header" class="bg-gray-300">
           <div >
             <div
@@ -40,7 +121,7 @@
               class="pl-3 pb-8 border-typography_primary dark--border-typography_primary_dark flex flex-col md--flex-row items-center md--justify-between mt-12 md--mt-4">
               <!-- Social Share -->
               <div class="mt-6 md--mt-0">
-                <NavShareIcons :headline="doc.headline" :excerpt="doc.description" :path="doc._path + '/'" />
+                <NavShareIcons :headline="doc.headline" :excerpt="doc.description" :path="doc.path + '/'" />
               </div>
             </div>
           </div>
@@ -74,89 +155,8 @@
         </Section>
         <!-- Scroll to top -->
         <NavScrollTopIcon />
-      </template>
-      <!-- Error in case not found -->
-      <template #not-found>
-        <SectionsError />
-      </template>
-    </ContentDoc>
   </main>
 </template>
-
-<script setup>
-const { $formatDate } = useNuxtApp();
-const { path } = useRoute();
-const cleanPath = path.replace(/\/+$/, '');
-const { data, error } = await useAsyncData(`content-${cleanPath}`, async () => {
-  // Remove a trailing slash in case the browser adds it, it might break the routing
-  // fetch document where the document path matches with the cuurent route
-  let article = queryContent('/blog').where({ _path: cleanPath }).findOne();
-  // get the surround information,
-  // which is an array of documeents that come before and after the current document
-  let surround = queryContent('/blog').sort({ date: -1 }).only(['_path', 'headline', 'description', 'excerpt']).findSurround(cleanPath, { before: 1, after: 1 });
-  return {
-    article: await article,
-    surround: await surround
-  };
-});
-
-// Get the authors
-const { data: authorData } = await useAsyncData('home', () => queryContent('/authors').findOne());
-
-// Set the meta
-const baseUrl = 'https://michael.paulukonis.github.io';
-const canonicalPath = baseUrl + (path + '/').replace(/\/+$/, '/');
-const image = baseUrl + (data.value?.article?.socialImage.src || '/sample.webp');
-
-// JSON+LD
-const jsonScripts = [
-  {
-    type: 'application/ld+json',
-    children: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': 'https://michael.paulukonis.github.io/'
-      },
-      url: canonicalPath,
-      image: image,
-      headline: data.value?.article?.headline,
-      abstract: data.value?.article?.excerpt,
-      datePublished: data.value?.article?.date,
-      dateModified: data.value?.article?.dateUpdated || data.value?.article?.date,
-      author: authorData.value[data.value?.article?.author],
-      publisher: authorData.value['Gonzalo Hirsch']
-    })
-  }
-];
-useHead({
-  title: data.value?.article?.title,
-  meta: [
-    { name: 'author', content: data.value?.article?.author },
-    { name: 'description', content: data.value?.article?.description },
-    { property: 'article:published_time', content: data.value?.article?.date.split('T')[0] },
-    // OG
-    { hid: 'og--title', property: 'og--title', content: data.value?.article?.headline },
-    { hid: 'og--url', property: 'og--url', content: canonicalPath },
-    { hid: 'og--description', property: 'og--description', content: data.value?.article?.description },
-    { hid: 'og--image', name: 'image', property: 'og--image', content: image },
-    { hid: 'og--type', property: 'og--type', content: 'Article' },
-    { hid: 'og--image--type', property: 'og--image--type', content: `image/${data.value?.article?.socialImage.mime}` },
-    { hid: 'og--image--width', property: 'og--image--width', content: data.value?.article?.socialImage.width || 190 },
-    { hid: 'og--image--height', property: 'og--image--height', content: data.value?.article?.socialImage.height || 190 },
-    { hid: 'og--image--alt', property: 'og--image--alt', content: data.value?.article?.socialImage.alt },
-  ],
-  link: [
-    {
-      hid: 'canonical',
-      rel: 'canonical',
-      href: canonicalPath
-    }
-  ],
-  script: jsonScripts
-});
-</script>
 
 <style scoped>
 .blog-aside {

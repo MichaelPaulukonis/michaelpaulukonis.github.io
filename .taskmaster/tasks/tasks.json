@@ -7,16 +7,214 @@
         "description": "Upgrade the project from NuxtContent v2 to v3, updating all dependencies and making necessary code changes to ensure compatibility with the new version.",
         "details": "1. Backup the current project state before beginning the upgrade.\n\n2. Update the package.json dependencies:\n   - Update @nuxt/content from v2.x to v3.x\n   - Check for any related packages that need updates\n\n3. Install the updated dependencies:\n   ```bash\n   npm install @nuxt/content@3.x.x\n   # or\n   yarn add @nuxt/content@3.x.x\n   ```\n\n4. Update the nuxt.config.js/ts file to accommodate v3 configuration changes:\n   - Review the content module configuration\n   - Update any deprecated options\n   - Add any new required options\n\n5. Update content directory structure if necessary (check v3 documentation for any structural changes).\n\n6. Refactor API usage:\n   - Update any imports if the import paths have changed\n   - Update method calls that have been renamed or modified\n   - Replace any deprecated features with their v3 equivalents\n\n7. Update content query syntax:\n   - v3 might have different query methods or parameters\n   - Refactor all content fetching code to use the new syntax\n\n8. Check and update any content rendering components:\n   - Update component props if they've changed\n   - Ensure markdown rendering still works as expected\n\n9. Look for breaking changes in the v3 documentation and address each one systematically.\n\n10. Update any custom plugins or middleware that interact with the content module.\n\n11. Documentation updates:\n    - Update any internal documentation about content usage\n    - Add notes about the upgrade for other developers",
         "testStrategy": "1. Verify installation and build:\n   - Ensure the project builds without errors\n   - Check that development server runs correctly\n   - Verify production build completes successfully\n\n2. Content rendering tests:\n   - Verify all existing content pages load correctly\n   - Check that markdown formatting renders properly\n   - Test code blocks, tables, and other special content elements\n   - Ensure images and other media still display properly\n\n3. Content API tests:\n   - Test all content queries to ensure they return expected results\n   - Verify pagination works correctly if used\n   - Check that filtering and sorting function properly\n\n4. Performance testing:\n   - Compare load times before and after the upgrade\n   - Check for any significant increases in bundle size\n   - Monitor memory usage during content operations\n\n5. Cross-browser testing:\n   - Verify content displays correctly in all supported browsers\n   - Check for any browser-specific issues with the new version\n\n6. Regression testing:\n   - Create a checklist of all content-related features\n   - Systematically test each feature to ensure it still works\n\n7. SEO verification:\n   - Check that meta tags are still generated correctly\n   - Verify that content is properly indexed in search preview tools\n\n8. Create automated tests for critical content functionality to prevent future regressions.",
-        "status": "pending",
+        "status": "in-progress",
         "dependencies": [],
         "priority": "medium",
-        "subtasks": []
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Update Dependencies and Core Configuration",
+            "description": "Update Nuxt Content package dependencies from v2 to v3 and configure the new content module structure",
+            "dependencies": [],
+            "details": "Execute npm install @nuxt/content@latest to update the package dependency. Create a new content.config.ts file at the project root with collection definitions. Update nuxt.config.ts to register the @nuxt/content module and configure the new content options structure. Verify the configuration aligns with Nuxt Content v3 requirements by checking for deprecated options and adding any new required parameters. Ensure TypeScript configuration is updated to support the new module structure.",
+            "status": "done",
+            "testStrategy": "Verify successful installation by checking package.json for @nuxt/content@3.x.x version. Confirm the project builds without errors using nuxi build. Check that the development server runs correctly with nuxi dev and that no configuration-related warnings or errors appear in the console.",
+            "updatedAt": "2025-11-30T21:46:47.069Z",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Restructure Content Directory and Navigation Files",
+            "description": "Update content directory structure and navigation configuration files to comply with Nuxt Content v3 requirements",
+            "dependencies": [
+              1
+            ],
+            "details": "Rename all _dir.yml files to .navigation.yml throughout the content directory structure. Update all path references from _path to .path in content files and application code. Configure collections in content.config.ts to define content sources with appropriate include/exclude patterns, ensuring dot files are properly handled with exclude: ['**/.!(navigation.yml)']. Update any custom content organization patterns to work with the new collection-based architecture. Verify that all content files are properly recognized by the new system by checking the generated SQLite database structure.",
+            "status": "done",
+            "testStrategy": "Validate that all content pages are properly indexed by querying the content database. Check that navigation structures render correctly across the application. Verify that special files like .navigation.yml are properly processed and that content organization remains intact after the structural changes.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-30T21:46:47.073Z"
+          },
+          {
+            "id": 3,
+            "title": "Migrate Content Query APIs and Data Access Patterns",
+            "description": "Update all content query implementations to use the new SQL-based collection query system",
+            "dependencies": [
+              2
+            ],
+            "details": "Replace all instances of queryContent() with queryCollection() throughout the codebase, updating query parameters to use SQL-like syntax (e.g., where('path', 'LIKE', '/blog%') instead of regex patterns). Update findSurround() calls to use the new queryCollectionItemSurroundings() API. Replace searchContent() with queryCollectionSearchSections() for full-text search functionality. Update any useContent() composables to use the new data fetching patterns. Modify pagination implementations to work with the new queryCollection API's limit and skip parameters. Ensure all data fetching operations properly handle the new collection-based structure and SQL query syntax.",
+            "status": "done",
+            "testStrategy": "Create test cases that verify all content queries return expected results. Check that pagination works correctly with the new query syntax. Validate that surrounding content navigation (previous/next articles) functions properly. Confirm that search functionality returns accurate results with the new API. Test edge cases like empty queries and invalid parameters to ensure proper error handling.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-30T21:46:47.076Z"
+          },
+          {
+            "id": 4,
+            "title": "Update Content Rendering Components and Document-Driven Mode",
+            "description": "Replace deprecated rendering components and implement document-driven routing for Nuxt Content v3",
+            "dependencies": [
+              3
+            ],
+            "details": "Replace all instances of <ContentDoc>, <ContentList>, <ContentNavigation>, and <ContentQuery> components with the new <ContentRenderer> component. Update component usage to match the new API, including proper value binding and slot usage. Implement document-driven mode by creating a catch-all route ([...slug].vue) that fetches content based on the route path using queryCollection(). Update any custom markdown rendering logic to work with the new MDC syntax and component integration. Modify any custom prose components to use the new slot handling patterns, replacing <ContentSlot> and <MDCSlot> with standard Vue <slot> components. Update any custom styling for rendered content to accommodate the new rendering structure.",
+            "status": "done",
+            "testStrategy": "Verify that all content pages render correctly with proper formatting and styling. Check that markdown features like code blocks, tables, and custom components render as expected. Validate that document-driven routing works for all content paths. Test custom component integration within markdown content. Confirm that responsive design and accessibility features are maintained after the rendering updates.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-30T21:46:47.078Z"
+          },
+          {
+            "id": 5,
+            "title": "Validate Upgrade and Address Remaining Compatibility Issues",
+            "description": "Conduct comprehensive testing and resolve any remaining compatibility issues after migration",
+            "dependencies": [
+              4
+            ],
+            "details": "Perform smoke testing on all major content features including navigation, search, and content rendering. Update any custom plugins or middleware that interact with the content module to work with the new API. Verify TypeScript types are correctly generated based on collection schemas and update any type-related issues. Test the application in different deployment environments (static, server, serverless) to ensure compatibility. Address any warnings or errors related to deprecated features that were missed during initial migration. Update internal documentation to reflect the new Nuxt Content v3 implementation patterns and provide guidance for future development.",
+            "status": "done",
+            "testStrategy": "Execute end-to-end tests covering all content-related functionality. Verify SEO metadata is properly generated for all content pages. Check Core Web Vitals performance metrics to ensure no degradation from the upgrade. Test the application in production-like environments to catch environment-specific issues. Validate that content editing workflows (if using Nuxt Studio) function correctly with the new version. Confirm that all automated tests pass and add new tests for v3-specific functionality.",
+            "parentId": "undefined",
+            "updatedAt": "2025-11-30T21:46:47.081Z"
+          },
+          {
+            "id": 6,
+            "title": "Update dependencies in package.json",
+            "description": "Remove nuxt-content-assets and update to Nuxt Content v3 in the project dependencies.",
+            "status": "pending",
+            "dependencies": [],
+            "details": "1. Open package.json\n2. Remove 'nuxt-content-assets' from dependencies\n3. Ensure '@nuxt/content' is updated to '^3.0.0' under devDependencies\n4. Verify that 'nuxt' is set to '^3.19.0'\n5. Keep other dependencies as-is unless there are known breaking changes\n6. Run `npm install` (or equivalent yarn/pnpm command) to update the dependencies\n7. Check for any compatibility warnings during installation\n<info added on 2025-11-30T22:04:43.741Z>\n8. Replace devDependency \"nitropack\" with \"nitro@^3.0.0\" in package.json per Nuxt Content v3 guidance\n9. Note: After running `npm install`, the package installation succeeds, but `nuxt prepare` (postinstall) still emits an `EISDIR` error when compiling `content/types.d.ts`. This error needs further investigation.\n</info added on 2025-11-30T22:04:43.741Z>",
+            "testStrategy": "Verify that the installation completes without errors. Run `npm ls` to confirm that @nuxt/content v3 is installed and nuxt-content-assets is no longer present.",
+            "parentId": "undefined"
+          },
+          {
+            "id": 7,
+            "title": "Create content asset inventory",
+            "description": "Locate and document all non-markdown assets currently adjacent to content files.",
+            "status": "pending",
+            "dependencies": [],
+            "details": "1. Write a Node.js script to scan the content/ directory:\n```javascript\nconst fs = require('fs');\nconst path = require('path');\nconst assetExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.pdf', '.mp4'];\nconst contentDir = path.resolve('./content');\nconst assetMap = {};\n\nfunction scanDirectory(dir) {\n  const entries = fs.readdirSync(dir, { withFileTypes: true });\n  \n  for (const entry of entries) {\n    const fullPath = path.join(dir, entry.name);\n    \n    if (entry.isDirectory()) {\n      scanDirectory(fullPath);\n    } else {\n      const ext = path.extname(entry.name).toLowerCase();\n      if (assetExtensions.includes(ext)) {\n        const relativePath = path.relative(contentDir, fullPath);\n        assetMap[relativePath] = {\n          originalPath: fullPath,\n          extension: ext,\n          directory: path.relative(contentDir, dir)\n        };\n      }\n    }\n  }\n}\n\nscanDirectory(contentDir);\n\nfs.writeFileSync(\n  'asset-inventory.json', \n  JSON.stringify(assetMap, null, 2)\n);\n\nconsole.log(`Found ${Object.keys(assetMap).length} assets in content/ directory`);\n```\n2. Run the script to generate the asset inventory\n3. Also scan markdown files to find references to these assets:\n```javascript\nconst markdownFiles = {};\nconst assetRefPattern = /!\\[.*?\\]\\((.*?)\\)|\\[.*?\\]\\((.*?)\\)/g;\n\nfunction scanMarkdownFiles(dir) {\n  const entries = fs.readdirSync(dir, { withFileTypes: true });\n  \n  for (const entry of entries) {\n    const fullPath = path.join(dir, entry.name);\n    \n    if (entry.isDirectory()) {\n      scanMarkdownFiles(fullPath);\n    } else if (entry.name.endsWith('.md')) {\n      const content = fs.readFileSync(fullPath, 'utf8');\n      const references = [];\n      let match;\n      \n      while ((match = assetRefPattern.exec(content)) !== null) {\n        const ref = match[1] || match[2];\n        if (ref && !ref.startsWith('http') && !ref.startsWith('/')) {\n          references.push(ref);\n        }\n      }\n      \n      if (references.length > 0) {\n        markdownFiles[path.relative(contentDir, fullPath)] = references;\n      }\n    }\n  }\n}\n\nscanMarkdownFiles(contentDir);\n\nfs.writeFileSync(\n  'markdown-references.json', \n  JSON.stringify(markdownFiles, null, 2)\n);\n\nconsole.log(`Found references in ${Object.keys(markdownFiles).length} markdown files`);\n```\n4. Document both the asset locations and their references in markdown",
+            "testStrategy": "Verify that the inventory accurately captures all assets in the content directory. Cross-check against a manual sampling of directories to ensure nothing is missed. Verify that the markdown reference detection accurately identifies image and link references.",
+            "parentId": "undefined"
+          },
+          {
+            "id": 8,
+            "title": "Design new asset structure in public directory",
+            "description": "Define and create the organizational structure for assets in the public directory.",
+            "status": "pending",
+            "dependencies": [
+              "1.7"
+            ],
+            "details": "1. Review the asset-inventory.json created in the previous task\n2. Define a clear mapping strategy from content/ to public/ paths, following one of the recommended approaches:\n   - Option A: Flatten content hierarchy into organized public folders\n     Example: content/blog/post-a/image.jpg → public/blog/post-a-image.jpg\n   - Option B: Mirror content structure under public/\n     Example: content/blog/post-a/image.jpg → public/content/blog/post-a/image.jpg\n3. Document the mapping strategy in a structured format like:\n```javascript\nconst fs = require('fs');\nconst path = require('path');\nconst inventory = require('./asset-inventory.json');\n\n// Define the mapping function based on selected strategy\nfunction getPublicPath(originalPath) {\n  // Option A implementation (flattened)\n  const relativePath = path.relative('./content', originalPath);\n  const dir = path.dirname(relativePath);\n  const filename = path.basename(relativePath);\n  \n  // If asset is in a named post directory, prefix filename with directory name\n  if (dir.includes('/') && !filename.startsWith(path.basename(dir))) {\n    return path.join('public', path.dirname(dir), `${path.basename(dir)}-${filename}`);\n  }\n  \n  return path.join('public', dir, filename);\n  \n  // Option B implementation (mirrored)\n  // return path.join('public/content', relativePath);\n}\n\nconst pathMap = {};\n\nfor (const [relPath, assetInfo] of Object.entries(inventory)) {\n  const originalPath = assetInfo.originalPath;\n  const newPath = getPublicPath(originalPath);\n  \n  pathMap[originalPath] = {\n    newPath,\n    relativeReference: `/${path.relative('public', newPath)}` // For markdown links\n  };\n}\n\nfs.writeFileSync(\n  'asset-path-mapping.json',\n  JSON.stringify(pathMap, null, 2)\n);\n```\n4. Create the necessary folder structure in the public directory\n5. Document this structure in project documentation for future content additions",
+            "testStrategy": "Manually review the designed structure to ensure it logically organizes assets. Check that the mapping is reversible and maintains clear relationships between content and assets. Verify that the proposed structure will work with GitHub Pages.",
+            "parentId": "undefined"
+          },
+          {
+            "id": 9,
+            "title": "Move content assets to public directory",
+            "description": "Physically relocate assets from content/ to public/ following the planned structure.",
+            "status": "pending",
+            "dependencies": [
+              "1.7",
+              "1.8"
+            ],
+            "details": "1. Create a script that executes the asset migration using the mapping created in the previous task:\n```javascript\nconst fs = require('fs');\nconst path = require('path');\nconst pathMap = require('./asset-path-mapping.json');\n\n// Create any missing directories\nfunction ensureDirectoryExists(filePath) {\n  const dirname = path.dirname(filePath);\n  if (fs.existsSync(dirname)) return;\n  \n  ensureDirectoryExists(dirname);\n  fs.mkdirSync(dirname);\n}\n\n// Copy assets to their new locations\nlet copied = 0;\nlet errors = 0;\n\nfor (const [originalPath, mapping] of Object.entries(pathMap)) {\n  try {\n    const newPath = mapping.newPath;\n    ensureDirectoryExists(newPath);\n    \n    fs.copyFileSync(originalPath, newPath);\n    console.log(`Copied: ${originalPath} -> ${newPath}`);\n    copied++;\n  } catch (error) {\n    console.error(`Error copying ${originalPath}:`, error.message);\n    errors++;\n  }\n}\n\nconsole.log(`Migration complete: ${copied} files copied, ${errors} errors`);\n```\n2. Run the script to physically copy the assets to their new location in public/\n3. Verify that all files were copied correctly and maintain their integrity\n4. Create a special note in the project docs that content assets are now stored in public/ and not alongside content files",
+            "testStrategy": "After running the script, compare file counts between the original content assets and the newly copied public assets. Spot-check several files with different extensions to verify they were copied correctly. Test that images display properly when accessed via their new paths.",
+            "parentId": "undefined"
+          },
+          {
+            "id": 10,
+            "title": "Update markdown asset references",
+            "description": "Convert relative paths in markdown content to absolute paths that match the new public/ locations.",
+            "status": "pending",
+            "dependencies": [
+              "1.7",
+              "1.8",
+              "1.9"
+            ],
+            "details": "1. Create a script that updates all markdown files to use the new asset references:\n```javascript\nconst fs = require('fs');\nconst path = require('path');\nconst markdownRefs = require('./markdown-references.json');\nconst pathMap = require('./asset-path-mapping.json');\n\nconst contentDir = path.resolve('./content');\n\n// Helper function to resolve the original asset path\nfunction resolveAssetPath(mdFilePath, assetRef) {\n  if (assetRef.startsWith('./')) {\n    return path.resolve(path.dirname(mdFilePath), assetRef.slice(2));\n  }\n  if (assetRef.startsWith('../')) {\n    return path.resolve(path.dirname(mdFilePath), assetRef);\n  }\n  return path.resolve(path.dirname(mdFilePath), assetRef);\n}\n\n// Function to get new reference for an asset\nfunction getNewReference(mdFilePath, assetRef) {\n  const resolvedPath = resolveAssetPath(mdFilePath, assetRef);\n  const mapping = pathMap[resolvedPath];\n  if (!mapping) {\n    console.warn(`No mapping found for asset: ${resolvedPath} (referenced from ${mdFilePath})`);\n    return assetRef; // Keep original if no mapping\n  }\n  return mapping.relativeReference;\n}\n\nlet modified = 0;\n\nfor (const [mdRelPath, references] of Object.entries(markdownRefs)) {\n  const mdFilePath = path.join(contentDir, mdRelPath);\n  let content = fs.readFileSync(mdFilePath, 'utf8');\n  let changed = false;\n  \n  // Sort references by length (longest first) to avoid partial replacements\n  references.sort((a, b) => b.length - a.length);\n  \n  for (const ref of references) {\n    const newRef = getNewReference(mdFilePath, ref);\n    if (newRef !== ref) {\n      // Replace both image and link references\n      const imgPattern = new RegExp(`!\\\\[([^\\\\]]*)\\\\]\\\\(${escapeRegExp(ref)}\\\\)`, 'g');\n      content = content.replace(imgPattern, `![$1](${newRef})`);\n      \n      const linkPattern = new RegExp(`(?<!!)\\\\[([^\\\\]]*)\\\\]\\\\(${escapeRegExp(ref)}\\\\)`, 'g');\n      content = content.replace(linkPattern, `[$1](${newRef})`);\n      \n      changed = true;\n    }\n  }\n  \n  if (changed) {\n    fs.writeFileSync(mdFilePath, content);\n    console.log(`Updated references in: ${mdRelPath}`);\n    modified++;\n  }\n}\n\n// Helper to escape regex special characters\nfunction escapeRegExp(string) {\n  return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n}\n\nconsole.log(`Updated ${modified} markdown files with new asset references`);\n```\n2. Run the script to update all markdown files\n3. Verify the updates by checking a sample of modified files\n4. Document the new absolute path convention for future content creation",
+            "testStrategy": "Manually review several updated markdown files to verify that the image and link references have been properly converted. Test rendering the markdown in a browser to ensure images display correctly. Try different types of references (images, links) and different path patterns (same directory, parent directory, etc.).",
+            "parentId": "undefined"
+          },
+          {
+            "id": 11,
+            "title": "Apply Nuxt Content v2 to v3 API migration",
+            "description": "Update code to replace Nuxt Content v2 APIs with Content v3 equivalents.",
+            "status": "pending",
+            "dependencies": [
+              "1.6"
+            ],
+            "details": "1. Locate all instances of Content v2 API usage in the codebase:\n   - Look for `queryContent()` calls\n   - Check for imported types from `@nuxt/content`\n   - Review any content-related components\n2. Replace `queryContent()` with `queryCollection()` according to the official migration guide:\n   ```javascript\n   // Old v2 code\n   const articles = await queryContent('blog').find();\n   \n   // New v3 code\n   const articles = await queryCollection('blog').find();\n   ```\n3. Update the rendering of content:\n   ```vue\n   <!-- Old v2 approach -->\n   <ContentDoc />\n   \n   <!-- New v3 approach -->\n   <ContentRenderer :value=\"page\" />\n   ```\n4. Update imports and type references:\n   ```typescript\n   // Old v2 types\n   import { QueryBuilderParams } from '@nuxt/content'\n   \n   // New v3 types\n   import { QueryBuilderParams, ContentNavigationItem } from '@nuxt/content'\n   ```\n5. Update dynamic page components that fetch content (likely in pages/[...slug].vue or similar):\n   ```vue\n   <script setup>\n   const route = useRoute();\n   \n   // v3 approach\n   const { data: page } = await useAsyncData(`content-${route.path}`, () => {\n     return queryCollection().path(route.path).find();\n   });\n   </script>\n   \n   <template>\n     <ContentRenderer v-if=\"page\" :value=\"page\" />\n   </template>\n   ```\n6. If using Content navigation, update those calls too:\n   ```javascript\n   // Old v2\n   const { navigation } = useContent();\n   \n   // New v3\n   const navigation = await queryCollection().navigation();\n   ```",
+            "testStrategy": "Run the development server with `npm run dev` and navigate to different content pages to verify they load correctly. Check for any console errors related to Content API calls. Verify that all content features (navigation, rendering, etc.) work as expected with the new v3 APIs.",
+            "parentId": "undefined"
+          },
+          {
+            "id": 12,
+            "title": "Create or adjust content.config.ts",
+            "description": "Set up a configuration file for Nuxt Content v3 collections and schemas.",
+            "status": "pending",
+            "dependencies": [
+              "1.6",
+              "1.11"
+            ],
+            "details": "1. Create a new file `content.config.ts` in the project root:\n```typescript\nimport { defineContentConfig, defineCollection } from '@nuxt/content'\nimport { z } from 'zod'\n\n// Analyze existing frontmatter in content files to define appropriate schemas\n// This example assumes a blog collection with common blog post frontmatter\nexport default defineContentConfig({\n  collections: {\n    blog: defineCollection({\n      source: 'blog/*.md',\n      type: 'page',\n      schema: z.object({\n        // Adjust these fields based on existing frontmatter\n        title: z.string().optional(),\n        date: z.string().optional(), // Could be z.date() if ISO format is used\n        description: z.string().optional(),\n        tags: z.array(z.string()).optional(),\n        image: z.string().optional(), // Featured image path\n        draft: z.boolean().optional(),\n        // Add other fields as needed\n      })\n    }),\n    // Add other collections as needed\n    pages: defineCollection({\n      source: 'pages/*.md',\n      type: 'page',\n      schema: z.object({\n        title: z.string().optional(),\n        description: z.string().optional(),\n        // Add other fields as needed\n      })\n    })\n  }\n})\n```\n2. Adjust the schema fields based on the actual frontmatter used in your content files\n3. Define additional collections if your content is organized into multiple sections\n4. Make sure the `source` patterns match your content file organization\n5. Install zod if not already included: `npm install zod`",
+            "testStrategy": "Start the Nuxt development server and check that content is properly validated against the schema. Intentionally introduce a schema violation in a content file (e.g., set tags to a string instead of an array) to verify that validation is working. Check the Content v3 debug UI (if enabled) to see if collections are properly configured.",
+            "parentId": "undefined"
+          },
+          {
+            "id": 13,
+            "title": "Update dynamic page routing",
+            "description": "Ensure catch-all or route-specific pages use the new Content v3 approach for dynamic content.",
+            "status": "pending",
+            "dependencies": [
+              "1.11",
+              "1.12"
+            ],
+            "details": "1. Locate dynamic page components, typically:\n   - `pages/[...slug].vue` (catch-all route)\n   - `pages/blog/[slug].vue` (blog-specific route)\n   - Any other dynamic route components\n\n2. Update each component to use the Content v3 API:\n```vue\n<script setup lang=\"ts\">\nimport type { ContentNavigationItem } from '@nuxt/content';\n\nconst route = useRoute();\n\n// Fetch the current page\nconst { data: page } = await useAsyncData(`content-${route.path}`, async () => {\n  return queryCollection().path(route.path).findOne();\n});\n\n// Handle 404 for missing content\nif (!page.value) {\n  throw createError({\n    statusCode: 404,\n    message: 'Content not found'\n  });\n}\n\n// If you need related content or navigation\nconst { data: related } = await useAsyncData(`related-${route.path}`, async () => {\n  // Example: get related content by tag\n  if (page.value?.tags && page.value.tags.length > 0) {\n    return queryCollection('blog')\n      .where({\n        tags: { $contains: page.value.tags[0] },\n        _path: { $ne: route.path }\n      })\n      .limit(3)\n      .find();\n  }\n  return [];\n});\n\n// If you need navigation\nconst { data: navigation } = await useAsyncData('navigation', () => {\n  return queryCollection().navigation();\n});\n</script>\n\n<template>\n  <div>\n    <div v-if=\"page\">\n      <ContentRenderer :value=\"page\" />\n      \n      <!-- Example related content -->\n      <div v-if=\"related && related.length\" class=\"related-content\">\n        <h3>Related Content</h3>\n        <ul>\n          <li v-for=\"item in related\" :key=\"item._path\">\n            <NuxtLink :to=\"item._path\">{{ item.title }}</NuxtLink>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div v-else>Content not found</div>\n  </div>\n</template>\n```\n\n3. Apply the same pattern to any list pages (e.g., blog index):\n```vue\n<script setup>\n// For a blog listing page\nconst { data: posts } = await useAsyncData('blog-posts', () => {\n  return queryCollection('blog')\n    .sort({ date: -1 }) // newest first\n    .find();\n});\n</script>\n\n<template>\n  <div>\n    <h1>Blog Posts</h1>\n    <ul>\n      <li v-for=\"post in posts\" :key=\"post._path\">\n        <NuxtLink :to=\"post._path\">\n          {{ post.title }}\n          <span v-if=\"post.date\">- {{ new Date(post.date).toLocaleDateString() }}</span>\n        </NuxtLink>\n      </li>\n    </ul>\n  </div>\n</template>\n```\n\n4. Update any custom content components to match the new API",
+            "testStrategy": "Navigate to dynamic routes in the development environment to verify they load correctly. Test edge cases such as invalid routes, missing content, and different content types. Verify that related content and navigation work as expected.",
+            "parentId": "undefined"
+          },
+          {
+            "id": 14,
+            "title": "Test and validate the migration",
+            "description": "Verify that all content pages render correctly with the new Content v3 setup and asset structure.",
+            "status": "pending",
+            "dependencies": [
+              "1.9",
+              "1.10",
+              "1.11",
+              "1.12",
+              "1.13"
+            ],
+            "details": "1. Start the Nuxt development server:\n   ```\n   npm run dev\n   ```\n\n2. Systematically test all content pages:\n   - Check each dynamic route to ensure content renders correctly\n   - Verify all images and assets display properly\n   - Test navigation and related content functionality\n\n3. Test the static build to ensure GitHub Pages deployment will work:\n   ```\n   npm run generate\n   # or equivalent static build command from your package.json\n   ```\n\n4. Inspect the generated output in the `.output/public` directory:\n   - Verify that all assets are correctly included\n   - Check that all content pages are generated\n   - Ensure asset references in HTML files are correct\n\n5. Test the static site using a local server:\n   ```\n   npx serve .output/public\n   ```\n\n6. Create a test deployment to verify GitHub Pages compatibility\n\n7. Verify functionality across different browsers and devices\n\n8. Check performance metrics (Lighthouse or similar) to ensure the migration didn't impact performance",
+            "testStrategy": "Create a checklist of all content pages and features to test. Document any issues found during testing. Use Lighthouse to measure performance before and after the migration. Test both development and production builds.",
+            "parentId": "undefined"
+          },
+          {
+            "id": 15,
+            "title": "Implement fallback for nuxt-content-assets if needed",
+            "description": "Create a custom solution to replicate critical nuxt-content-assets functionality if required.",
+            "status": "pending",
+            "dependencies": [
+              "1.9",
+              "1.10",
+              "1.14"
+            ],
+            "details": "This task is optional and only needed if the core migration doesn't fully meet requirements. If content authors still need to keep assets adjacent to markdown and use relative paths, create a small custom module:\n\n1. Create a new file `modules/content-assets.js`:\n\n```javascript\nimport { defineNuxtModule } from '@nuxt/kit'\nimport fs from 'fs'\nimport path from 'path'\nimport { globby } from 'globby'\n\nexport default defineNuxtModule({\n  meta: {\n    name: 'content-assets',\n    configKey: 'contentAssets'\n  },\n  defaults: {\n    contentDir: 'content',\n    publicDir: 'public/content-assets'\n  },\n  setup(options, nuxt) {\n    // Hook into the build process\n    nuxt.hook('build:before', async () => {\n      const contentDir = path.resolve(nuxt.options.srcDir, options.contentDir)\n      const publicDir = path.resolve(nuxt.options.srcDir, options.publicDir)\n      \n      // Ensure the output directory exists\n      if (!fs.existsSync(publicDir)) {\n        fs.mkdirSync(publicDir, { recursive: true })\n      }\n      \n      // Find all non-markdown files in the content directory\n      const assetPatterns = [\n        '**/*.{png,jpg,jpeg,gif,svg,webp,mp4,pdf,doc,docx,xls,xlsx}',\n        '!**/*.md',\n        '!**/*.json',\n        '!**/*.yaml',\n        '!**/*.yml'\n      ].map(pattern => path.join(contentDir, pattern))\n      \n      const assetPaths = await globby(assetPatterns)\n      \n      // Copy assets to public directory\n      for (const assetPath of assetPaths) {\n        const relativePath = path.relative(contentDir, assetPath)\n        const destPath = path.join(publicDir, relativePath)\n        const destDir = path.dirname(destPath)\n        \n        // Ensure destination directory exists\n        if (!fs.existsSync(destDir)) {\n          fs.mkdirSync(destDir, { recursive: true })\n        }\n        \n        // Copy the file\n        fs.copyFileSync(assetPath, destPath)\n        console.log(`Copied content asset: ${relativePath}`)\n      }\n      \n      // Process markdown files to update relative links\n      const mdPatterns = ['**/*.md'].map(pattern => path.join(contentDir, pattern))\n      const mdPaths = await globby(mdPatterns)\n      \n      const assetRefPattern = /!\\[(.*)\\]\\((.+?)\\)|\\[(.*)\\]\\((.+?)\\)/g\n      \n      for (const mdPath of mdPaths) {\n        let content = fs.readFileSync(mdPath, 'utf8')\n        let modified = false\n        let match\n        \n        // Clone the regex pattern for each file to avoid state issues\n        const pattern = new RegExp(assetRefPattern.source, assetRefPattern.flags)\n        \n        while ((match = pattern.exec(content)) !== null) {\n          const imgAlt = match[1]\n          const imgPath = match[2]\n          const linkText = match[3]\n          const linkPath = match[4]\n          \n          const refPath = imgPath || linkPath\n          \n          // Only process relative paths that aren't already absolute or external\n          if (refPath && !refPath.startsWith('http') && !refPath.startsWith('/')) {\n            const mdDir = path.dirname(mdPath)\n            const absoluteRefPath = path.resolve(mdDir, refPath)\n            \n            // Check if this references a content asset\n            if (assetPaths.includes(absoluteRefPath)) {\n              const relativeToContent = path.relative(contentDir, absoluteRefPath)\n              const newPath = `/${options.publicDir.replace(/^public\\/?/, '')}/${relativeToContent}`\n              \n              // Replace the reference in the content\n              const original = match[0]\n              let replacement\n              \n              if (imgPath) {\n                replacement = `![${imgAlt}](${newPath})`\n              } else {\n                replacement = `[${linkText}](${newPath})`\n              }\n              \n              content = content.replace(original, replacement)\n              modified = true\n            }\n          }\n        }\n        \n        // Save the file if modified\n        if (modified) {\n          fs.writeFileSync(mdPath, content, 'utf8')\n          console.log(`Updated asset references in: ${path.relative(contentDir, mdPath)}`)\n        }\n      }\n    })\n  }\n})\n```\n\n2. Add necessary dependencies:\n   ```\n   npm install globby\n   ```\n\n3. Add the module to your `nuxt.config.ts`:\n   ```javascript\n   export default defineNuxtConfig({\n     // ... other config\n     modules: [\n       // ... other modules\n       '~/modules/content-assets'\n     ],\n     contentAssets: {\n       contentDir: 'content',\n       publicDir: 'public/content-assets'\n     }\n   })\n   ```\n\n4. Document usage instructions for content authors, explaining they can still place images next to markdown and use relative paths.",
+            "testStrategy": "Test the custom module by adding sample content with adjacent assets and relative references. Verify that the build process correctly copies assets to the public directory and updates references in markdown. Test both development and production builds to ensure consistency.",
+            "parentId": "undefined"
+          }
+        ],
+        "updatedAt": "2025-11-30T21:46:47.081Z"
       }
     ],
     "metadata": {
-      "created": "2025-11-28T21:55:36.250Z",
-      "description": "Default tasks context",
-      "updated": "2025-11-28T21:56:21.001Z"
+      "version": "1.0.0",
+      "lastModified": "2025-11-30T21:46:47.081Z",
+      "taskCount": 1,
+      "completedCount": 0,
+      "tags": [
+        "master"
+      ],
+      "created": "2025-11-30T22:04:35.429Z",
+      "description": "Tasks for master context"
     }
   }
 }

@@ -3,7 +3,7 @@ title: Return of the PoeticalBot
 description: My poetry-generating bot originally written in 2016 is now on AWS and posting again
 headline: Return of the PoeticalBot
 date: '2025-11-23T12:00:00'
-dateUpdated: ''
+dateUpdated: 
 author: 'Michael Paulukonis'
 authorUrl: 'https://michael.paulukonis.github.io/'
 socialImage:
@@ -38,14 +38,15 @@ Cart-before-the-horsely, I started with Tumblr integration, then iterated on the
 
 ![a "poem" by poeticalbot](media/poeticalbot_sample_email.png)
 
-
 After it was running and posting, I deployed it to Heroku's free tier (where I already had a bunch of Twitter bots running). I kept adding features: new generator types, text transformers that changed punctuation or sorted lines alphabetically, more source texts. The original version even accepted input parameters, so I could run themed content for holidays or explore specific concepts (like spending a week on "Oz vs Apocalypse Now").
 
 But life happened. New baby, new job, another personal project became my weekend focus, and eventually Heroku killed free dynos. PoeticalBot went silent in 2021.
 
-<br />
+::div{.mb-12}
+::
 
-<br />
+::div{.mb-12}
+::
 
 Until this fall.
 

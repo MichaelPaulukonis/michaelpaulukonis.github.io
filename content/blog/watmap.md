@@ -3,7 +3,7 @@ title: WATMAP and other delights
 headline: WATMAP and other delights
 description: A glitch-aesthetic mosaic image-remaker built in Processing by somebody else
 date: 2019-09-14
-dateUpdated: ''
+dateUpdated: 
 author: Michael Paulukonis
 socialImage:
     src: 'media/sample.webp'

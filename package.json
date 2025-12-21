@@ -1,33 +1,28 @@
 {
-  "private": false,
-  "engines": {
-    "node": ">=18"
-  },
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "generate": "nuxi generate",
-    "clean": "rm -rf dist && rm -rf .output",
-    "deploy": "gh-pages -t -d .output/public --nojekyll",
-    "publish": "npm run clean && npm run generate && npm run deploy",
-    "bump": "npm version patch",
-    "open": "open http://michaelpaulukonis.github.io"
-  },
-  "devDependencies": {
-    "@nuxt/content": "^2.13.4",
-    "@nuxt/fonts": "^0.11.0",
-    "@nuxtjs/tailwindcss": "^6.13.2",
-    "gh-pages": "^6.3.0",
-    "nuxt": "^3.16.1",
-    "rehype-external-links": "^3.0.0",
-    "sass": "^1.85.1"
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
   },
   "dependencies": {
-    "@vue/language-plugin-pug": "^2.2.4",
-    "@vueuse/core": "^9.13.0",
-    "nuxt-content-assets": "^1.4.4",
-    "pug": "^3.0.3"
+    "@nuxt/content": "^3.8.2",
+    "@vueuse/core": "^14.1.0",
+    "better-sqlite3": "^12.5.0",
+    "nuxt": "^4.2.1",
+    "zod": "^4.2.1"
+  },
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
+  "devDependencies": {
+    "@nuxt/fonts": "^0.12.1",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@vue/language-plugin-pug": "^3.1.8",
+    "pug": "^3.0.3",
+    "remark-attr": "^0.11.1",
+    "remark-directive": "^4.0.0",
+    "sass": "^1.97.0"
   }
 }

@@ -3,7 +3,7 @@ title: Daily Code Monas
 description: Jan 2025 I write a code-generated Mona Lisa every day
 headline: Daily Code Monas
 date: '2025-03-26T12:00:00'
-dateUpdated: ''
+dateUpdated: 
 author: 'Michael Paulukonis'
 authorUrl: 'https://michael.paulukonis.github.io/'
 socialImage:

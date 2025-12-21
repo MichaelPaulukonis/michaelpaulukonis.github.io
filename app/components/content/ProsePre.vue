@@ -6,7 +6,7 @@
         <span v-if="languageText" class="language-text">
             {{ languageText }}
         </span>
-        <slot />
+        <pre><slot /></pre>
         <div class="bottom-container opacity-100 group-hover--md--opacity-100 md--opacity-0 transition-opacity duration-150">
             <div class="copy-container">
                 <button
@@ -49,20 +49,20 @@ const languageMap: Record<string, { text: string }> = {
     }
 };
 
-const languageText = computed(() => (props.language ? languageMap[props.language]?.text : null));
+const languageText = computed(() => (props.language ? languageMap[props.language]?.text : props.language));
 </script>
 
 <style scoped>
 .container {
     @apply w-full my-6 rounded-md bg-black border border-brand_primary/50 pt-8 relative overflow-hidden;
 }
-:slotted(pre) {
-    @apply flex overflow-x-auto px-4 pb-4 text-sm;
+pre {
+    @apply flex overflow-x-auto px-4 pb-4 text-sm text-white;
     line-height: 1.625;
     counter-reset: lines;
 }
 @screen md {
-    :slotted(pre) {
+    pre {
         @apply text-base;
     }
 }
@@ -91,20 +91,20 @@ const languageText = computed(() => (props.language ? languageMap[props.language
 .language-text {
     @apply absolute right-0 top-0 bg-brand_primary text-background px-2 py-1 rounded-bl-md;
 }
-:slotted(pre code) {
+:slotted(code) {
     @apply w-full flex flex-col;
 }
-:slotted(pre code .line) {
+:slotted(code .line) {
     @apply inline-table;
     min-height: 1rem;
 }
-:slotted(pre code .line::before) {
+:slotted(code .line::before) {
     @apply w-4 mr-6 inline-block text-left;
     counter-increment: lines;
     content: counter(lines);
     color: rgba(115, 138, 148, 0.4);
 }
-:slotted(pre code .highlight) {
+:slotted(code .highlight) {
     @apply block -mx-4 pr-4 pl-3 border-l-4 border-brand_primary;
     content: '';
     background-color: #363b46;

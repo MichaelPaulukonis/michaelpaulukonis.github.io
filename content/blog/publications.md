@@ -3,7 +3,7 @@ title: Publications
 description: Places that have graced me with my presence
 headline: Publications
 date: 2021-07-01
-dateUpdated: ''
+dateUpdated: 
 author: Michael Paulukonis
 socialImage:
     src: 'media/publications.thumb.png'

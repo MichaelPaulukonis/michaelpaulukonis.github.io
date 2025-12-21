@@ -3,7 +3,7 @@ title: A Nuxt blog using Content
 description: A Nuxt blog using Content
 headline: A Nuxt blog using Content
 date: '2025-03-22T12:00:00'
-dateUpdated: ''
+dateUpdated: 
 author: 'Michael Paulukonis'
 authorUrl: 'https://michael.paulukonis.github.io/'
 socialImage:
@@ -28,7 +28,6 @@ I've smushed in ("integrated" is perhaps too generous) a different style for the
 
 I've also had to upgrade Nuxt and some other dependencies.
 
-
 ```shell
 > nvm use 18
 > rm package-lock.json
@@ -38,8 +37,13 @@ I've also had to upgrade Nuxt and some other dependencies.
 > npx nuxi@latest devtools enable
 ```
 
-Enabling `devtools` is not required if you've already added it to your `nuxt.config.ts`.
+::div{.mb-12}
+::
 
-## Styling originally based on Marina Aisa's nuxt-markdown-blog 
+::div{.mb-12}
+Enabling `devtools` is not required if you've already added it to your `nuxt.config.ts`.
+::
+
+## Styling originally based on Marina Aisa's nuxt-markdown-blog
 
 Marina's [nuxt markdown blog starter](https://github.com/marinaaisa/nuxt-markdown-blog-starter) was the original basis for the design, but the colors were electrified and more things changed. I hope to iteratively come up with a legible compromise between several designs. I may be an artist and a programmer, but CSS is not my favorite medium.

@@ -29,9 +29,13 @@ const props = defineProps({
 });
 
 const refinedSrc = computed(() => {
-    if (props.src?.startsWith('/') && !props.src.startsWith('//')) {
-        return withBase(props.src, useRuntimeConfig().app.baseURL);
+    let src = props.src;
+    if (src && !src.startsWith('/') && !src.startsWith('http') && !src.startsWith('data:')) {
+        src = '/' + src;
     }
-    return props.src;
+    if (src?.startsWith('/') && !src.startsWith('//')) {
+        return withBase(src, useRuntimeConfig().app.baseURL);
+    }
+    return src;
 });
 </script>

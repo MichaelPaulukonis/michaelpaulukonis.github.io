@@ -1,7 +1,7 @@
 <template lang="pug">
 #pinned-posts.ul.grid.grid-cols-1.md--grid-cols-2.gap-4.text-typography_primary
-    li.relative.rounded-md.border-typography_primary.hover--border-brand_primary.group(v-for="article in data" :key="article._path")
-        NuxtLink.pr-4.block.relative(:to="article._path + '/'")
+    li.relative.rounded-md.border-typography_primary.hover--border-brand_primary.group(v-for="article in data" :key="article.path")
+        NuxtLink.pr-4.block.relative(:to="article.path + '/'")
             .wrapper
                 img(:src="article.socialImage.src" :alt="article.description" class="rounded-md")
                 .pinned__title.font-serif.text-h3.leading-h3.font-semibold.group-hover--text-brand_primary {{ article.headline }}

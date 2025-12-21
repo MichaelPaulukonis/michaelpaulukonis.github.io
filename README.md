@@ -1,6 +1,8 @@
 # Personal website blog thingy
 
-Long time no update
+I do not feel the need to update as often as I once did.
+
+![colorful screenshot of the website as of late 2025](./docs/michaelpaulukonis_github_io.png)
 
 
 ## TODO:
