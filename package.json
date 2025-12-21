@@ -6,7 +6,13 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "clean": "rm -rf dist && rm -rf .output",
+    "deploy": "gh-pages -t -d .output/public --nojekyll",
+    "publish": "pnpm run clean && pnpm run generate && pnpm run deploy",
+    "bump": "pnpm version patch",
+    "open": "open http://michaelpaulukonis.github.io"
   },
   "dependencies": {
     "@nuxt/content": "^3.8.2",
@@ -20,6 +26,7 @@
     "@nuxt/fonts": "^0.12.1",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vue/language-plugin-pug": "^3.1.8",
+    "gh-pages": "^6.3.0",
     "pug": "^3.0.3",
     "remark-attr": "^0.11.1",
     "remark-directive": "^4.0.0",
