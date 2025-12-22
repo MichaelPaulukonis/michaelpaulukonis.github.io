@@ -7,7 +7,7 @@ dateUpdated:
 author: 'Michael Paulukonis'
 authorUrl: 'https://michael.paulukonis.github.io/'
 socialImage:
-    src: 'media/poeticalbot_2016_thumb.png'
+    src: '/media/poeticalbot_2016_thumb.png'
     mime: 'png'
     alt: 'a "poem" from poeticalbot plus headers and things'
     width: 512
@@ -36,7 +36,7 @@ After four years of silence, [PoeticalBot](https://poeticalbot.tumblr.com/) is p
 I built PoeticalBot for the 2016 NaPoGenMo (National Poetry Generation Month - an offshoot of NaNoGenMo for people who are allergic to margins).
 Cart-before-the-horsely, I started with Tumblr integration, then iterated on the text output to make actual "poetry" (scare quotes because computer-generated poesy isn't really, or because you should be careful around the output lest it pull a Pontypool* on you and change everything). The bot mines existing texts for words, sentences, parts of speech, and punctuation, then applies various generators and transformers to create... something poetic-adjacent.
 
-![a "poem" by poeticalbot](media/poeticalbot_sample_email.png)
+![a "poem" by poeticalbot](/media/poeticalbot_sample_email.png)
 
 After it was running and posting, I deployed it to Heroku's free tier (where I already had a bunch of Twitter bots running). I kept adding features: new generator types, text transformers that changed punctuation or sorted lines alphabetically, more source texts. The original version even accepted input parameters, so I could run themed content for holidays or explore specific concepts (like spending a week on "Oz vs Apocalypse Now").
 
@@ -60,7 +60,7 @@ The migration was easier than I had feared. The original code already worked wit
 
 AND - it is posting hourly again, after all this time!
 
-![poeticalbot posts with a long time gap](media/poeticalbot_alive_cropped.png)
+![poeticalbot posts with a long time gap](/media/poeticalbot_alive_cropped.png)
 
 ## avert your eyes
 

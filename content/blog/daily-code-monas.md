@@ -7,7 +7,7 @@ dateUpdated:
 author: 'Michael Paulukonis'
 authorUrl: 'https://michael.paulukonis.github.io/'
 socialImage:
-    src: 'media/daily_code_monas.thumb.png'
+    src: '/media/daily_code_monas.thumb.png'
     mime: 'png'
     alt: 'screenshot of coded Daily Mona Lisas from Instagram'
     width: 512
@@ -23,7 +23,7 @@ tags:
 
 # A Month of Experimenting with Code and an Icon
 
-![screenshot of coded Daily Mona Lisas from Instagram](media/daily_code_monas.01.png)
+![screenshot of coded Daily Mona Lisas from Instagram](/media/daily_code_monas.01.png)
 
 For years, I've been obsessed with the Mona Lisa.  My [Daily Mona Lisa](https://www.instagram.com/explore/search/keyword/?q=%23dailymonalisa) series on Instagram, with over 1000 entries, is a testament to that.  But they've almost all been made manually with digital tools, commercial off-the-shelf (COTS) applications. As a professional programmer who also creates art, I wanted to more deeply integrate these two passions.
 

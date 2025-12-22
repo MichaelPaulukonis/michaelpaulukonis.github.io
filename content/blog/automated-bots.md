@@ -6,7 +6,7 @@ date: 2019-09-14
 dateUpdated: 
 author: Michael Paulukonis
 socialImage:
-    src: 'media/sample.webp'
+    src: '/media/sample.webp'
     mime: 'webp'
     alt: 'Mountain'
     width: 1200

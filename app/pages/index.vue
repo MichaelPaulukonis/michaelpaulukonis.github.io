@@ -53,4 +53,8 @@ const { data: pinnedPosts } = await useAsyncData('pinnedPosts', () => {
     .order('date', 'DESC')
     .all()
 })
+
+useSeo({
+  description: 'Michael Paulukonis - Software Engineer and Digital Artist. Portfolio of web projects, experiments, and blog posts.'
+})
 </script>

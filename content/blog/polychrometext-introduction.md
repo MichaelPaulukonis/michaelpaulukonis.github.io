@@ -7,7 +7,7 @@ dateUpdated:
 author: 'Michael Paulukonis'
 authorUrl: 'https://michael.paulukonis.github.io/'
 socialImage:
-    src: 'media/polychrometext.thumb.jpg'
+    src: '/media/polychrometext.thumb.jpg'
     mime: 'webp'
     alt: 'an older version of Polychrometext with some GUI elements'
     width: 900
@@ -24,7 +24,7 @@ tags:
 
 NOTE: as of 03.2025 this needs a massive update. As does the code.
 
-![a working session of PolychromeText showing an older GUI](media/polychrometext.thumb.jpg)
+![a working session of PolychromeText showing an older GUI](/media/polychrometext.thumb.jpg)
 
 ## What are you talking about?
 

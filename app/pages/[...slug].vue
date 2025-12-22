@@ -8,6 +8,11 @@ const { data: page } = await useAsyncData('page-' + route.path, () => {
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
+
+useSeo({
+  title: page.value.title,
+  description: page.value.description
+})
 </script>
 
 <template>

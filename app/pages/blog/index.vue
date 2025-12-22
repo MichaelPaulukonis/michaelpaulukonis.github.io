@@ -37,4 +37,9 @@ const { data } = await useAsyncData('blog-list', async () => {
 
 const posts = computed(() => data.value?.posts);
 const totalPages = computed(() => data.value?.totalPages || 0);
+
+useSeo({
+  title: 'Blog',
+  description: 'Articles and musings on art, programming, and generative experiments.'
+})
 </script>

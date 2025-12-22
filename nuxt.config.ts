@@ -5,6 +5,11 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/content',
   ],
+
+  css: [
+    '~/assets/css/main.purple.css'
+  ],
+
   content: {
     markdown: {
       mdc: true,
@@ -13,9 +18,12 @@ export default defineNuxtConfig({
       }
     }
   },
+
   devtools: { enabled: true },
+
   future: {
     compatibilityVersion: 4,
   },
+
   compatibilityDate: '2024-04-03',
 })

@@ -7,6 +7,13 @@ export default defineContentConfig({
       source: {
         include: '**.md',
         exclude: ['blog/**']
+      },
+      search: {
+        fields: {
+          title: true,
+          description: true,
+          body: true
+        }
       }
     }),
     blog: defineCollection({
@@ -26,7 +33,15 @@ export default defineContentConfig({
           height: z.number().optional(),
           alt: z.string().optional()
         }).optional()
-      })
+      }),
+      search: {
+        fields: {
+          title: true,
+          headline: true,
+          excerpt: true,
+          body: true
+        }
+      }
     }),
     authors: defineCollection({
       type: 'data',

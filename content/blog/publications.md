@@ -6,7 +6,7 @@ date: 2021-07-01
 dateUpdated: 
 author: Michael Paulukonis
 socialImage:
-    src: 'media/publications.thumb.png'
+    src: '/media/publications.thumb.png'
     mime: 'png'
     alt: 'an online web zine'
     width: 586

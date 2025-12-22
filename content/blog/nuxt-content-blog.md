@@ -7,7 +7,7 @@ dateUpdated:
 author: 'Michael Paulukonis'
 authorUrl: 'https://michael.paulukonis.github.io/'
 socialImage:
-    src: 'media/polychrometext.thumb.jpg'
+    src: '/media/polychrometext.thumb.jpg'
     mime: 'webp'
     alt: 
     width: 900

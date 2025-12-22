@@ -1,4 +1,14 @@
-# Gemini CLI-Specific Instructions
+# Gemini Context
+
+This file provides context for the Gemini CLI.
+
+For project-specific instructions, coding standards, and architectural guidelines, please refer to the single source of truth:
+
+[.github/copilot-instructions.md](../.github/copilot-instructions.md)
+
+All instructions applicable to GitHub Copilot in this project should also be followed by Gemini.
+
+## Gemini CLI-Specific Instructions
 
 > **Note:** This file works alongside `AGENTS.md` (generic AI agent instructions). AGENTS.md contains the core Task Master commands and workflows for all AI agents. This file contains only Gemini CLI-specific features and integrations.
 
@@ -108,3 +118,4 @@ As a Gemini CLI assistant with Task Master:
 ---
 
 *See AGENTS.md for complete Task Master commands, workflows, and best practices.*
+

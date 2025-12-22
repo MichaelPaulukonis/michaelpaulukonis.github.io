@@ -2,14 +2,7 @@
 export default {
   separator: '--',
   content: [
-    `app/components/**/*.{vue,js}`,
-    `app/layouts/**/*.vue`,
-    `app/pages/**/*.vue`,
-    `app/pages/*.vue`,
-    `app/composables/**/*.{js,ts}`,
-    `app/plugins/**/*.{js,ts}`,
-    `app/App.{js,ts,vue}`,
-    `app/app.{js,ts,vue}`
+    'app/**/*.{vue,js,ts}'
   ],
   theme: {
     extend: {

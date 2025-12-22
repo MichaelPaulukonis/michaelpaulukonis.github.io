@@ -27,6 +27,17 @@ const baseUrl = 'https://michaelpaulukonis.github.io';
 const canonicalPath = baseUrl + (route.path + '/').replace(/\/+$/, '/');
 const image = baseUrl + (doc.value?.socialImage?.src ? (doc.value.socialImage.src.startsWith('/') ? doc.value.socialImage.src : '/' + doc.value.socialImage.src) : '/sample.webp');
 
+useSeo({
+  title: doc.value?.title,
+  description: doc.value?.description,
+  image: image,
+  url: canonicalPath,
+  type: 'article',
+  author: doc.value?.author,
+  publishedTime: doc.value?.date?.split('T')[0],
+  modifiedTime: (doc.value?.dateUpdated || doc.value?.date)?.split('T')[0]
+})
+
 // JSON+LD
 const jsonScripts = computed(() => {
   if (!doc.value) return [];
@@ -47,36 +58,13 @@ const jsonScripts = computed(() => {
         datePublished: doc.value.date,
         dateModified: doc.value.dateUpdated || doc.value.date,
         author: authorData.value ? authorData.value[doc.value.author] : undefined,
-        publisher: authorData.value ? authorData.value['Gonzalo Hirsch'] : undefined
+        publisher: authorData.value ? authorData.value['Michael Paulukonis'] : undefined
       })
     }
   ];
 });
 
 useHead({
-  title: computed(() => doc.value?.title),
-  meta: [
-    { name: 'author', content: computed(() => doc.value?.author) },
-    { name: 'description', content: computed(() => doc.value?.description) },
-    { property: 'article:published_time', content: computed(() => doc.value?.date?.split('T')[0]) },
-    // OG
-    { hid: 'og--title', property: 'og--title', content: computed(() => doc.value?.headline) },
-    { hid: 'og--url', property: 'og--url', content: canonicalPath },
-    { hid: 'og--description', property: 'og--description', content: computed(() => doc.value?.description) },
-    { hid: 'og--image', name: 'image', property: 'og--image', content: image },
-    { hid: 'og--type', property: 'og--type', content: 'Article' },
-    { hid: 'og--image--type', property: 'og--image--type', content: computed(() => doc.value?.socialImage ? `image/${doc.value.socialImage.mime}` : undefined) },
-    { hid: 'og--image--width', property: 'og--image--width', content: computed(() => doc.value?.socialImage?.width || 190) },
-    { hid: 'og--image--height', property: 'og--image--height', content: computed(() => doc.value?.socialImage?.height || 190) },
-    { hid: 'og--image--alt', property: 'og--image--alt', content: computed(() => doc.value?.socialImage?.alt) },
-  ],
-  link: [
-    {
-      hid: 'canonical',
-      rel: 'canonical',
-      href: canonicalPath
-    }
-  ],
   script: jsonScripts
 });
 </script>
