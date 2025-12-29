@@ -16,8 +16,12 @@
     li(v-for="project in projects" :key="project.url")
       a.site-link(:href="project.url") {{ project.name }}
 
+  #recent.pt-0-important.mt-10
+    BlogPinned(v-if="recentPosts" :data="recentPosts")
+
   #main.pt-0-important.mt-10
     BlogPinned(v-if="pinnedPosts" :data="pinnedPosts")
+
 </template>
 
 <script setup>
@@ -47,10 +51,19 @@ const projects = [
   { url: 'http://michaelpaulukonis.github.io/duo-chrome/', name: 'duo-chrome' }
 ];
 
+
+
 const { data: pinnedPosts } = await useAsyncData('pinnedPosts', () => {
   return queryCollection('blog')
     .where('tags', 'LIKE', '%pinned%')
     .order('date', 'DESC')
+    .all()
+})
+
+const { data: recentPosts } = await useAsyncData('recentPosts', () => {
+  return queryCollection('blog')
+    .order('date', 'DESC')
+    .limit(2)
     .all()
 })
 

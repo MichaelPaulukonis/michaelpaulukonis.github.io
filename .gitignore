@@ -44,6 +44,7 @@ node_modules/
 *.njsproj
 *.sln
 *.sw?
+.frontmatter/
 
 # OS specific
 .DS_Store

@@ -3,7 +3,7 @@ title: Automated Art Automatons
 headline: Automated Art Automatons
 description: Notes on automated bots, mostly posting to Twitter or Tumblr
 date: 2019-09-14
-dateUpdated: 
+dateUpdated: 2025-12-29
 author: Michael Paulukonis
 socialImage:
     src: '/media/sample.webp'
@@ -18,8 +18,7 @@ tags:
   - tumblr
 ---
 
-NOTE: as of 03.2025 just about everything on this list is defunct, except for [ListMania](https://leanstooneside.tumblr.com/)
-
+NOTE: as of 03.2025 just about everything on this list is defunct, except for [ListMania](https://leanstooneside.tumblr.com/) and [PoeticalBot](https://github.com/MichaelPaulukonis/PoeticalBot)
 
 # What are you talking about?
 

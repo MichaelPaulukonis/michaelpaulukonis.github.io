@@ -22,7 +22,6 @@ tags:
   - tumblr
   - bots
   - nodejs
-  - pinned
 ---
 
 # Poeticalbot "writes" poetically

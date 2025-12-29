@@ -2,22 +2,23 @@
 title: Introducing PolychromeText
 description: A browser-based text-drawing program because I was jealous of Jackson Pollock and Mark Rothko
 headline: PolychromeText
-date: '2019-09-14T12:00:00'
-dateUpdated: 
-author: 'Michael Paulukonis'
-authorUrl: 'https://michael.paulukonis.github.io/'
+date: 2019-09-14T12:00:00
+dateUpdated: null
+author: Michael Paulukonis
+authorUrl: https://michael.paulukonis.github.io/
 socialImage:
-    src: '/media/polychrometext.thumb.jpg'
-    mime: 'webp'
-    alt: 'an older version of Polychrometext with some GUI elements'
-    width: 900
-    height: 583
-tags: 
+  src: /media/polychrometext.thumb.jpg
+  mime: webp
+  alt: an older version of Polychrometext with some GUI elements
+  width: 900
+  height: 583
+tags:
   - art
   - programming
   - text
   - pinned
   - p5js
+fmContentType: default
 ---
 
 # An introduction to PolychromeText
