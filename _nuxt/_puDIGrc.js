@@ -1,1 +1,0 @@
-import{_ as r,c as o,o as s,O as a}from"./BBR5qlgS.js";const t={},n={class:"px-1 py-0.5 rounded bg-gray-100 dark:bg-gray-800 font-mono text-sm border border-gray-200 dark:border-gray-700"};function c(e,d){return s(),o("code",n,[a(e.$slots,"default")])}const f=Object.assign(r(t,[["render",c]]),{__name:"ProseCode"});export{f as default};
