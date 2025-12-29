@@ -381,3 +381,34 @@ I'll add this after the pinnedPosts query and before the useSeo call.Done! I've 
 
 ---
 
+_**User (2025-12-29 21:33Z)**_
+
+Does the `.frontmatter/` directory get committed?
+
+---
+
+_**Agent (model copilot/auto)**_
+
+<tool-use data-tool-type="read" data-tool-name="copilot_readFile">
+<details>
+<summary>Tool use: **copilot_readFile** • Reading [](file:///Users/michaelpaulukonis/projects/michaelpaulukonis.github.io/.gitignore)</summary>
+
+
+Read [](file:///Users/michaelpaulukonis/projects/michaelpaulukonis.github.io/.gitignore)
+
+</details>
+</tool-use>
+
+---
+
+The user is asking about whether the `.frontmatter/` directory should be committed to git. Let me check if there's a `.gitignore` file to see what's currently being ignored.The `` directory is **not** currently in your `.gitignore`, so it would be committed by default. 
+
+However, the `` directory typically contains local editor configuration and cache files for the Front Matter CMS VS Code extension. It's generally **recommended to ignore it** since it contains:
+- Local database/cache files
+- Editor-specific settings that may vary per developer
+- Temporary processing files
+
+Would you like me to add `` to your `.gitignore`?
+
+---
+
