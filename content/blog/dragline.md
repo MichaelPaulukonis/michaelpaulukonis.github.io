@@ -1,6 +1,6 @@
 ---
 title: "Dragline: grids of text, thirtyfive years in the making"
-description: A visual-poetry tool for dragging and stacking text blocks on canvas.
+description: A visual-poetry tool for dragging and stacking text blocks on canvas
 headline: "Stop dragging my text around"
 date: 2026-07-15T12:00:00
 dateUpdated: null
