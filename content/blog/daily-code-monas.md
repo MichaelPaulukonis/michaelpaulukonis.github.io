@@ -18,7 +18,6 @@ tags:
   - text
   - p5js
   - daily mona lisa
-  - pinned
 ---
 
 # A Month of Experimenting with Code and an Icon

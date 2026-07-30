@@ -50,6 +50,14 @@ body {
   @apply mb-4 mt-8 text-9xl font-black;
 }
 
+.page-index > #footer.sectionhead {
+  @apply block w-full text-center;
+}
+
+.page-index > #footer.sectionhead a.footer-link {
+  @apply text-white no-underline;
+}
+
 .page-index {
 
   /* Site Links */

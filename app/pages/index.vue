@@ -22,6 +22,8 @@
   #main.pt-0-important.mt-10
     BlogPinned(v-if="pinnedPosts" :data="pinnedPosts")
 
+  #footer.sectionhead
+    a.footer-link(href="./blog") More posts
 </template>
 
 <script setup>
@@ -63,7 +65,7 @@ const { data: pinnedPosts } = await useAsyncData('pinnedPosts', () => {
 const { data: recentPosts } = await useAsyncData('recentPosts', () => {
   return queryCollection('blog')
     .order('date', 'DESC')
-    .limit(2)
+    .limit(4)
     .all()
 })
 
