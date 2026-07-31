@@ -51,6 +51,9 @@ node_modules/
 
 # Task files
 # tasks.json
-# tasks/ 
+# tasks/
 
 .specstory/
+
+# Superpowers brainstorming companion
+.superpowers/
