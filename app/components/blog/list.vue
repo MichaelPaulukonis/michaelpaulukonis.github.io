@@ -3,7 +3,7 @@
         <li
             v-for="article in data"
             :key="article.path"
-            class="bg-gray-300 col-span-full md--col-span-5 relative rounded-md border-2 border-typography_primary hover--bg-gray-400 hover--border-4 hover--border-[#7d5cff] group"
+            class="bg-gray-300 col-span-full md--col-span-5 relative rounded-md border-2 border-typography_primary hover--bg-gray-400 hover--border-[#7d5cff] hover--outline hover--outline-2 hover--outline-[#7d5cff] group"
         >
             <NuxtLink :to="article.path + '/'" class="p-4 block relative">
                 <div class="wrapper">
