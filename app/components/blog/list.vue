@@ -8,12 +8,10 @@
             <NuxtLink :to="article.path + '/'" class="p-4 block relative">
                 <div class="wrapper">
                     <header>
-                        <h2
-                            class="text-h3 leading-h3 font-semibold mb-2 group-hover--text-brand_primary"
-                        >
+                        <h2 class="blog-list__title text-h3 leading-h3 font-semibold mb-2">
                             {{ article.headline }}
                         </h2>
-                        <p class="text-sm leading-sm mb-4 text-typography_primary/75 dark--text-typography_primary_dark/75">
+                        <p class="blog-list__date mb-4">
                             {{ $formatDate(article.date) }}
                         </p>
                         <p>{{ article.description }}</p>
@@ -38,3 +36,21 @@ const props = defineProps({
 });
 const { $formatDate } = useNuxtApp();
 </script>
+
+<style scoped>
+.blog-list__title {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: #7d5cff;
+    color: #fcfcfc;
+    border-radius: 2px;
+}
+
+.blog-list__date {
+    display: inline-block;
+    padding: 1px 6px;
+    background: #38ef7d;
+    color: #000;
+    font-size: 0.875rem;
+}
+</style>
