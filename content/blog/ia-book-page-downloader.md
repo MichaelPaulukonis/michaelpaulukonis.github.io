@@ -1,7 +1,7 @@
 ---
-title: IA Book Page Downloader, a bookmarklet turned extension
-headline: A Chrome extension for bulk-downloading archive.org page scans
-description: A Chrome extension for downloading full-resolution scanned book pages from archive.org
+title: IA Book Page Downloader, a Chrome extension
+headline: Archive.org page downloader
+description: A Chrome extension for downloading full-resolution page scans from the Internet Archive
 date: 2026-07-25
 dateUpdated: null
 author: Michael Paulukonis

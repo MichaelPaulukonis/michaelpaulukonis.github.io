@@ -1,7 +1,7 @@
 ---
 title: Nova Zombie Simulator
-headline: A keyboard-only zombie game built out of emoji
-description: A p5.js game made with Anthony, where you play the main zombie instead of fighting it.
+headline: Nova Zombie Simulator
+description: A p5.js zombie game made with Anthony, where you play the main zombie instead of fighting it.
 date: 2026-07-27
 dateUpdated: null
 author: Michael Paulukonis
