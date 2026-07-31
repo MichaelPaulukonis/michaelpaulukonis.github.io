@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-300 rounded-md border-2 border-typography_primary hover--border-brand_primary group relative mb-8">
+    <div class="bg-gray-300 rounded-md border-2 border-typography_primary hover--bg-gray-400 hover--border-4 hover--border-[#7d5cff] group relative mb-8">
         <NuxtLink :to="article.path + '/'" class="p-6 block relative">
             <header>
                 <h2 class="blog-featured__title text-h2 leading-h2 font-semibold mb-3">
