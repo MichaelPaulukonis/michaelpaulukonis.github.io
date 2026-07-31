@@ -3,7 +3,7 @@ main
   BlogHero
   Section#main.pt-0-important
     BlogFeatured(v-if="featuredPost" :article="featuredPost")
-    BlogList(v-if="gridPosts.length > 0" :data="gridPosts")
+    BlogList(v-if="posts.length === 0 || gridPosts.length > 0" :data="gridPosts")
     BlogPagination.mt-8(
       v-if="totalPages > 1"
       :currentPage="1"
