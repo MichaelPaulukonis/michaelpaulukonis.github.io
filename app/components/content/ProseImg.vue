@@ -1,7 +1,10 @@
 <template>
     <figure>
-        <img :src="refinedSrc" :alt="alt" :width="width" :height="height" class="mx-auto"/>
-        <figcaption class="text-base leading-base text-center mt-2 opacity-70">{{ alt }}</figcaption>    
+        <img :src="refinedSrc" :alt="imgAlt" :width="width" :height="height" class="mx-auto"/>
+        <figcaption class="text-base leading-base text-center mt-2 opacity-70">
+            <span class="block">{{ caption }}</span>
+            <span v-if="attribution" class="block text-sm mt-1 opacity-70">{{ attribution }}</span>
+        </figcaption>
     </figure>
 </template>
 
@@ -38,4 +41,14 @@ const refinedSrc = computed(() => {
     }
     return src;
 });
+
+// Alt text may carry a trailing "| attribution" segment, rendered as a second,
+// visually distinct figcaption line instead of running into the commentary.
+const caption = computed(() => props.alt.split('|')[0].trim());
+const attribution = computed(() => {
+    const parts = props.alt.split('|');
+    return parts.length > 1 ? parts.slice(1).join('|').trim() : '';
+});
+// Screen readers get the pipe-free version - "|" is markup for the sighted figcaption split, not content.
+const imgAlt = computed(() => attribution.value ? `${caption.value} — ${attribution.value}` : caption.value);
 </script>
