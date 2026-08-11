@@ -3,7 +3,7 @@
         <span v-if="filename" class="filename-text">
             {{ filename }}
         </span>
-        <span v-if="languageText" class="language-text">
+        <span v-if="languageText" class="lang-badge">
             {{ languageText }}
         </span>
         <pre><slot /></pre>
@@ -54,7 +54,7 @@ const languageText = computed(() => (props.language ? languageMap[props.language
 
 <style scoped>
 .container {
-    @apply w-full my-6 rounded-md bg-black border border-brand_primary/50 pt-8 relative overflow-hidden;
+    @apply w-full my-6 rounded-md bg-brand_primary border border-background/20 pt-8 relative overflow-hidden;
 }
 pre {
     @apply flex overflow-x-auto px-4 pb-4 text-sm text-white;
@@ -88,11 +88,13 @@ pre {
         @apply text-sm;
     }
 }
-.language-text {
+.lang-badge {
     @apply absolute right-0 top-0 bg-brand_primary text-background px-2 py-1 rounded-bl-md;
 }
 :slotted(code) {
     @apply w-full flex flex-col;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 :slotted(code .line) {
     @apply inline-table;
