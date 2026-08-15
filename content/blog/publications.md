@@ -23,7 +23,8 @@ tags:
 
 ## Places I can or have been found
 
-- Perspective magazine published [OBSCURUS](https://abc.perspektive.at/obscurator-visually-difficult/), 2020/2021
+- Perspektive magazine published [OBSCURUS](https://avantgarde-boot-camp.org/obscurator-visually-difficult/), 2020/2021
+  - [Issue notes](https://perspektive.mur.at/102-103-a-b-c/)
 - [Utsanga](https://www.utsanga.it/paulukonis-works-a-short-anthology/), March 2021
 - [Utsanga](https://www.utsanga.it/paulukonis-works/), Dec. 2020
 - [5 Emotional Spam Poems](https://web.njit.edu/~newrev/3.0/paulukonis.html) in the Newark Review 3.0
