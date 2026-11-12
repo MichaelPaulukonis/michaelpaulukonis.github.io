@@ -5,7 +5,7 @@ headline: DuoChrome and company
 date: 2025-12-29T12:00:00
 dateUpdated: null
 author: Michael Paulukonis
-authorUrl: https://michael.paulukonis.github.io/
+authorUrl: https://michaelpaulukonis.github.io/
 socialImage:
   src: /media/blog/duo-chrome/duo-chrome-filmstrip-history-blog.png
   mime: webp

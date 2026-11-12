@@ -5,7 +5,7 @@ description: A p5.js zombie game made with Anthony, where you play the main zomb
 date: 2026-07-27
 dateUpdated: null
 author: Michael Paulukonis
-authorUrl: https://michael.paulukonis.github.io/
+authorUrl: https://michaelpaulukonis.github.io/
 tags:
   - games
   - p5js

@@ -5,7 +5,7 @@ description: ASCII text-painter using whole words instead of letters, impression
 date: 2026-08-04
 dateUpdated: null
 author: Michael Paulukonis
-authorUrl: https://michael.paulukonis.github.io/
+authorUrl: https://michaelpaulukonis.github.io/
 tags:
   - generative-art
   - p5js

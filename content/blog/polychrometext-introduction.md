@@ -5,7 +5,7 @@ headline: PolychromeText
 date: 2019-09-14T12:00:00
 dateUpdated: null
 author: Michael Paulukonis
-authorUrl: https://michael.paulukonis.github.io/
+authorUrl: https://michaelpaulukonis.github.io/
 socialImage:
   src: /media/polychrometext.thumb.jpg
   mime: webp

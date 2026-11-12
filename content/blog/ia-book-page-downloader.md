@@ -5,7 +5,7 @@ description: A Chrome extension for downloading full-resolution page scans from 
 date: 2026-07-25
 dateUpdated: null
 author: Michael Paulukonis
-authorUrl: https://michael.paulukonis.github.io/
+authorUrl: https://michaelpaulukonis.github.io/
 tags:
   - chrome-extension
   - archive-org

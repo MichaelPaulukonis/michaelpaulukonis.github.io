@@ -5,7 +5,7 @@ headline: Daily Code Monas
 date: '2025-03-26T12:00:00'
 dateUpdated: 
 author: 'Michael Paulukonis'
-authorUrl: 'https://michael.paulukonis.github.io/'
+authorUrl: 'https://michaelpaulukonis.github.io/'
 socialImage:
     src: '/media/daily_code_monas.thumb.png'
     mime: 'png'

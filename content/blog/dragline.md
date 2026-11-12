@@ -5,7 +5,7 @@ headline: "Stop dragging my text around"
 date: 2026-07-15T12:00:00
 dateUpdated: null
 author: Michael Paulukonis
-authorUrl: https://michael.paulukonis.github.io/
+authorUrl: https://michaelpaulukonis.github.io/
 socialImage:
   src: /media/blog/dragline/dragline-social.png
   mime: image/png

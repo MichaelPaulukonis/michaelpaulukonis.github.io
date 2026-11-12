@@ -5,7 +5,7 @@ headline: Return of the PoeticalBot
 date: '2025-11-23T12:00:00'
 dateUpdated: 
 author: 'Michael Paulukonis'
-authorUrl: 'https://michael.paulukonis.github.io/'
+authorUrl: 'https://michaelpaulukonis.github.io/'
 socialImage:
     src: '/media/poeticalbot_2016_thumb.png'
     mime: 'png'

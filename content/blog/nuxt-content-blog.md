@@ -5,7 +5,7 @@ headline: A Nuxt blog using Content
 date: '2025-03-22T12:00:00'
 dateUpdated: 
 author: 'Michael Paulukonis'
-authorUrl: 'https://michael.paulukonis.github.io/'
+authorUrl: 'https://michaelpaulukonis.github.io/'
 socialImage:
     src: '/media/polychrometext.thumb.jpg'
     mime: 'webp'

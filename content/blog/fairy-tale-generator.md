@@ -5,7 +5,7 @@ description: 2014 project built on Propp's morphology turned into years of bolte
 date: 2026-08-10
 dateUpdated: null
 author: Michael Paulukonis
-authorUrl: https://michael.paulukonis.github.io/
+authorUrl: https://michaelpaulukonis.github.io/
 tags:
   - generative-text
   - nanogenmo

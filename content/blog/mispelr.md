@@ -5,7 +5,7 @@ description: I forgot I'd written mispelr, a 2015 toy that misspells text on pur
 date: 2026-11-02
 dateUpdated: null
 author: Michael Paulukonis
-authorUrl: https://michael.paulukonis.github.io/
+authorUrl: https://michaelpaulukonis.github.io/
 tags:
   - generative-text
   - npm
